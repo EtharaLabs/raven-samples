@@ -1,0 +1,67 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600" width="1200" height="600" role="img" aria-labelledby="t d">
+  <title id="t">raven: Morrigan, the shifting crow</title>
+  <desc id="d">A hooded woman caught mid-shift into a raven, one human eye and one corvid eye, with five loose feathers falling for the five graded axes. Flat vector in violet, cyan and navy.</desc>
+
+  <!-- palette bound by .memory/genesis.yaml: violet #845EF7, cyan #22d3ee, navy #131a33 -->
+
+  <!-- navy ground -->
+  <rect width="1200" height="600" fill="#131a33"/>
+
+  <!-- flat navy backdrop disc, and a single cyan omen arc reading two ways -->
+  <circle cx="600" cy="292" r="212" fill="#1b2347"/>
+  <path d="M390 369 A224 224 0 0 1 600 68" fill="none" stroke="#845EF7" stroke-width="5" stroke-linecap="round" opacity="0.65"/>
+  <path d="M600 68 A224 224 0 0 1 810 369" fill="none" stroke="#22d3ee" stroke-width="5" stroke-linecap="round" opacity="0.55"/>
+
+  <!-- cloak and shoulders -->
+  <path d="M330 560 C355 455 430 405 515 392 L690 392 C775 405 850 455 875 560 Z" fill="#845EF7"/>
+  <!-- flat shadow side of the cloak, navy-violet -->
+  <path d="M600 392 L690 392 C775 405 850 455 875 560 L600 560 Z" fill="#6943d6"/>
+
+  <!-- one wing fused to the right shoulder, scalloped so it reads as attached plumage and never as a loose feather -->
+  <path d="M688 416 C758 402 834 428 898 484 C872 490 856 476 838 484 C820 492 804 476 786 483 C768 490 752 473 734 479 C716 485 700 448 688 438 Z" fill="#6943d6"/>
+
+  <!-- hood -->
+  <path d="M600 112 C498 112 437 194 437 292 C437 356 466 402 512 416 L688 416 C734 402 763 356 763 292 C763 194 702 112 600 112 Z" fill="#845EF7"/>
+  <!-- hood shadow crescent on the corvid side -->
+  <path d="M600 112 C668 140 716 214 716 292 C716 352 690 398 640 416 L688 416 C734 402 763 356 763 292 C763 194 702 112 600 112 Z" fill="#6943d6"/>
+
+  <!-- face: human on the left, shifting to corvid on the right -->
+  <path d="M598 184 C551 184 518 227 518 283 C518 339 553 376 598 376 C614 376 629 372 642 363 L642 197 C629 188 614 184 598 184 Z" fill="#e8ecff"/>
+  <!-- the corvid plate the shift has already taken -->
+  <path d="M642 197 C664 205 679 230 681 262 L681 300 C679 334 664 357 642 363 Z" fill="#22d3ee"/>
+
+  <!-- raven beak -->
+  <path d="M672 250 C700 254 740 266 768 276 C740 288 700 298 672 302 C680 286 680 266 672 250 Z" fill="#22d3ee"/>
+  <path d="M676 276 C706 280 740 274 768 276" fill="none" stroke="#131a33" stroke-width="2.5" stroke-linecap="round" opacity="0.45"/>
+
+  <!-- one human eye -->
+  <path d="M540 272 C549 260 567 258 578 267 C567 279 549 281 540 272 Z" fill="#131a33"/>
+  <circle cx="560" cy="270" r="4.5" fill="#e8ecff"/>
+
+  <!-- one corvid eye -->
+  <circle cx="650" cy="258" r="16" fill="#131a33"/>
+  <circle cx="650" cy="258" r="16" fill="none" stroke="#e8ecff" stroke-width="4"/>
+  <circle cx="650" cy="258" r="5" fill="#22d3ee"/>
+
+  <!-- five loose feathers falling, one for each graded axis; inlined so every renderer resolves them -->
+  <g transform="translate(876 240) rotate(16) scale(1.10)" fill="#845EF7">
+    <path d="M0 0 C3 -24 15 -45 36 -58 C31 -32 19 -11 3 1 Z"/>
+    <path d="M1 -1 C9 -19 21 -37 34 -55" fill="none" stroke="#131a33" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+  </g>
+  <g transform="translate(928 316) rotate(32) scale(1.00)" fill="#22d3ee">
+    <path d="M0 0 C3 -24 15 -45 36 -58 C31 -32 19 -11 3 1 Z"/>
+    <path d="M1 -1 C9 -19 21 -37 34 -55" fill="none" stroke="#131a33" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+  </g>
+  <g transform="translate(974 392) rotate(48) scale(0.90)" fill="#845EF7">
+    <path d="M0 0 C3 -24 15 -45 36 -58 C31 -32 19 -11 3 1 Z"/>
+    <path d="M1 -1 C9 -19 21 -37 34 -55" fill="none" stroke="#131a33" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+  </g>
+  <g transform="translate(1014 468) rotate(64) scale(0.80)" fill="#22d3ee">
+    <path d="M0 0 C3 -24 15 -45 36 -58 C31 -32 19 -11 3 1 Z"/>
+    <path d="M1 -1 C9 -19 21 -37 34 -55" fill="none" stroke="#131a33" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+  </g>
+  <g transform="translate(1048 544) rotate(80) scale(0.70)" fill="#845EF7">
+    <path d="M0 0 C3 -24 15 -45 36 -58 C31 -32 19 -11 3 1 Z"/>
+    <path d="M1 -1 C9 -19 21 -37 34 -55" fill="none" stroke="#131a33" stroke-width="2.5" stroke-linecap="round" opacity="0.5"/>
+  </g>
+</svg>
