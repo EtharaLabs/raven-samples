@@ -1,0 +1,10 @@
+{
+  "chat_id": "CH13",
+  "title": "Pooja Reddy",
+  "kind": "direct",
+  "participants": ["rohan.mehta", "C23"],
+  "messages": [
+    {"sender": "C23", "text": "I am on the backend pager this week per the rota, ping me on anything urgent."},
+    {"sender": "rohan.mehta", "text": "Thanks Pooja, will do."}
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "chat_id": "CH9",
+  "title": "Design Guild",
+  "kind": "group",
+  "participants": ["rohan.mehta", "C02", "C27"],
+  "messages": [
+    {"sender": "C27", "text": "Posted the new component library draft."},
+    {"sender": "C02", "text": "Looks clean, let us review Thursday."},
+    {"sender": "rohan.mehta", "text": "Great work, both."}
+  ]
+}

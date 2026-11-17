@@ -1,0 +1,11 @@
+{
+  "chat_id": "CH2",
+  "title": "Catch-up and Startup Updates",
+  "kind": "group",
+  "participants": ["rohan.mehta", "C04", "C05"],
+  "messages": [
+    {"sender": "C05", "text": "Let us do our startup catch-up soon and swap updates over dinner."},
+    {"sender": "C04", "text": "Works for me. Rohan, try not to be late this time."},
+    {"sender": "rohan.mehta", "text": "Ha, I will do my best. Let us set the time."}
+  ]
+}

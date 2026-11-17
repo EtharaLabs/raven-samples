@@ -1,0 +1,10 @@
+{
+  "chat_id": "CH16",
+  "title": "Kabir Shah",
+  "kind": "direct",
+  "participants": ["rohan.mehta", "C45"],
+  "messages": [
+    {"sender": "C45", "text": "As QA lead I signed off the broader test plan, but the release call is yours."},
+    {"sender": "rohan.mehta", "text": "Thanks Kabir, will confirm on the release thread."}
+  ]
+}

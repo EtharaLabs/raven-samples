@@ -1,0 +1,11 @@
+{
+  "chat_id": "CH1",
+  "title": "Catch-up and Startup Updates",
+  "kind": "group",
+  "participants": ["rohan.mehta", "C41", "C42"],
+  "messages": [
+    {"sender": "C41", "text": "Overdue startup catch-up. Can we meet this week and swap founder updates?"},
+    {"sender": "C42", "text": "I am in. Rohan usually runs a little late, so we will hold the table."},
+    {"sender": "rohan.mehta", "text": "Guilty. Let us lock a time and I will confirm the slot."}
+  ]
+}

@@ -1,0 +1,11 @@
+{
+  "chat_id": "CH15",
+  "title": "Pinewicket Eng Leads",
+  "kind": "group",
+  "participants": ["rohan.mehta", "C09", "C36", "C49"],
+  "messages": [
+    {"sender": "C09", "text": "Reminder: platform roadmap sign-off is due this week."},
+    {"sender": "C49", "text": "On it, finalizing the sequencing now."},
+    {"sender": "rohan.mehta", "text": "Great, let us keep it moving."}
+  ]
+}

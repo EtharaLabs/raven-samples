@@ -1,0 +1,10 @@
+{
+  "chat_id": "CH10",
+  "title": "Rhea Kapoor",
+  "kind": "direct",
+  "participants": ["rohan.mehta", "C19"],
+  "messages": [
+    {"sender": "C19", "text": "Finished the regression pass on release 2.4, waiting on your go."},
+    {"sender": "rohan.mehta", "text": "Reviewing now, will confirm shortly."}
+  ]
+}

@@ -1,0 +1,508 @@
+[
+  {
+    "email_id": "E001",
+    "date": "2024-07-29",
+    "subject": "Reconciliation ticket re-opened",
+    "sender": "priya.sharma@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E002",
+    "date": "2024-08-01",
+    "subject": "Q3 board deck review",
+    "sender": "rahul.verma@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E003",
+    "date": "2024-08-02",
+    "subject": "CloudSpan invoice for July",
+    "sender": "imran@cloudspan.com",
+    "folder": "inbox",
+    "body": "Invoice for July services, total INR 4,20,000. Please remit to our usual account."
+  },
+  {
+    "email_id": "E004",
+    "date": "2024-08-05",
+    "subject": "Design review notes",
+    "sender": "arjun.rao@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E005",
+    "date": "2024-08-06",
+    "subject": "Candidate shortlist for PM role",
+    "sender": "tara.menon@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E006",
+    "date": "2024-08-01",
+    "subject": "Rent receipt July",
+    "sender": "george.t@gmail.com",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E007",
+    "date": "2024-08-02",
+    "subject": "Payroll cutoff reminder",
+    "sender": "harish.gupta@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E008",
+    "date": "2024-08-07",
+    "subject": "Dinner plans this weekend?",
+    "sender": "daniel.rebelo@gmail.com",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E009",
+    "date": "2024-07-31",
+    "subject": "Fundraise intro follow-up",
+    "sender": "nikhil@foundry.vc",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E010",
+    "date": "2024-08-08",
+    "subject": "Cohort analysis draft",
+    "sender": "ananya.iyer@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E011",
+    "date": "2024-08-02",
+    "subject": "GST filing documents needed",
+    "sender": "lata@pillaico.in",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E012",
+    "date": "2024-08-09",
+    "subject": "Family Diwali planning",
+    "sender": "meera.mehta@gmail.com",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E013",
+    "date": "2024-08-03",
+    "subject": "Press query about Series A",
+    "sender": "sameer.joshi@gmail.com",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E014",
+    "date": "2024-08-04",
+    "subject": "Product analytics anomaly",
+    "sender": "fatima.khan@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E015",
+    "date": "2024-08-10",
+    "subject": "QA sign-off for release 2.4",
+    "sender": "rhea.kapoor@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E016",
+    "date": "2024-07-28",
+    "subject": "Northstar term sheet for your round",
+    "sender": "vivek@northstar.vc",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E017",
+    "date": "2024-08-05",
+    "subject": "DataForge final invoice",
+    "sender": "anil@dataforge.in",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E018",
+    "date": "2024-08-01",
+    "subject": "DataForge data export ready",
+    "sender": "anil@dataforge.in",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E019",
+    "date": "2024-08-11",
+    "subject": "NDA review for the data deal",
+    "sender": "shreya.das@gmail.com",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E020",
+    "date": "2024-08-02",
+    "subject": "Backend oncall handover",
+    "sender": "pooja.reddy@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E021",
+    "date": "2024-08-03",
+    "subject": "Architecture RFC for the ledger service",
+    "sender": "karthik.iyer@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E022",
+    "date": "2024-07-30",
+    "subject": "Launch messaging draft",
+    "sender": "neha.gupta@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E023",
+    "date": "2024-08-01",
+    "subject": "Monthly mentor check-in",
+    "sender": "ravi.shankar@gmail.com",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E024",
+    "date": "2024-08-12",
+    "subject": "Portfolio feedback",
+    "sender": "simran.kaur@gmail.com",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E025",
+    "date": "2024-08-04",
+    "subject": "Payment reminder for the SAFE",
+    "sender": "vivek@northstar.vc",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E026",
+    "date": "2024-08-02",
+    "subject": "Campaign assets due",
+    "sender": "neha.gupta@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E027",
+    "date": "2024-08-06",
+    "subject": "Receipt for the team offsite",
+    "sender": "karthik.iyer@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E028",
+    "date": "2024-08-09",
+    "subject": "DataForge account closure confirmation",
+    "sender": "anil@dataforge.in",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E029",
+    "date": "2024-08-07",
+    "subject": "Q4 budget planning kickoff",
+    "sender": "priya.menon@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E030",
+    "date": "2024-08-06",
+    "subject": "Q3 budget variance review",
+    "sender": "harish.gupta@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E031",
+    "date": "2024-08-02",
+    "subject": "Our term sheet for your round",
+    "sender": "aditi@elevation.vc",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E032",
+    "date": "2024-08-05",
+    "subject": "Re: invoice follow-up",
+    "sender": "imran@cloudspan.com",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E033",
+    "date": "2024-08-05",
+    "subject": "Standup notes",
+    "sender": "dev.kapoor@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E034",
+    "date": "2024-08-08",
+    "subject": "Offsite photos",
+    "sender": "tara.menon@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E035",
+    "date": "2024-08-10",
+    "subject": "Frontend perf regression",
+    "sender": "dev.kapoor@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E036",
+    "date": "2024-08-11",
+    "subject": "Design system proposal",
+    "sender": "ishan.gupta@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E037",
+    "date": "2024-08-07",
+    "subject": "Reconciliation follow-up",
+    "sender": "priya.sharma@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E038",
+    "date": "2024-08-12",
+    "subject": "Summit fund intro",
+    "sender": "gaurav@summit.vc",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E039",
+    "date": "2024-08-09",
+    "subject": "Brightline onboarding",
+    "sender": "farhan@brightline.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E040",
+    "date": "2024-08-04",
+    "subject": "Receipt for the Aug 2 team lunch",
+    "sender": "george.t@gmail.com",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E041",
+    "date": "2024-08-08",
+    "subject": "Re: Backend oncall handover",
+    "sender": "manish.rao@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E042",
+    "date": "2024-08-09",
+    "subject": "Not renewing: closing out our Northwind contract",
+    "sender": "sandeep@northwind.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E043",
+    "date": "2024-08-02",
+    "subject": "CloudSpan invoice for July",
+    "sender": "imran@cloudspan.com",
+    "folder": "inbox",
+    "body": "Invoice for July services, total INR 2,60,000. Please remit to our usual account."
+  },
+  {
+    "email_id": "E044",
+    "date": "2024-08-07",
+    "subject": "Org chart update: platform team",
+    "sender": "rahul.verma@pinewicket.io",
+    "folder": "inbox",
+    "body": "Per the updated org chart, Arjun Menon's new title is Director, Platform."
+  },
+  {
+    "email_id": "E045",
+    "date": "2024-08-07",
+    "subject": "Platform team: org chart refresh",
+    "sender": "sneha.rao@pinewicket.io",
+    "folder": "inbox",
+    "body": "Per the HR org chart refresh, Arjun Menon's new title is Principal Platform Engineer."
+  },
+  {
+    "email_id": "E046",
+    "date": "2024-08-05",
+    "subject": "Brightline invoice for July",
+    "sender": "farhan@brightline.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E047",
+    "date": "2024-08-07",
+    "subject": "Lunch next week?",
+    "sender": "daniel.rebelo@gmail.com",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E048",
+    "date": "2024-08-09",
+    "subject": "Re: Cohort analysis draft",
+    "sender": "ananya.iyer@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E049",
+    "date": "2024-08-10",
+    "subject": "Invoice query",
+    "sender": "farhan@brightline.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E050",
+    "date": "2024-08-10",
+    "subject": "Board meeting logistics",
+    "sender": "rahul.verma@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E051",
+    "date": "2024-08-11",
+    "subject": "Re: NDA review for the data deal",
+    "sender": "shreya.das@gmail.com",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E052",
+    "date": "2024-08-06",
+    "subject": "Receipt for the client dinner",
+    "sender": "karthik.iyer@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E053",
+    "date": "2024-08-11",
+    "subject": "Weekend trek?",
+    "sender": "rohit.sharma@gmail.com",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E054",
+    "date": "2024-08-07",
+    "subject": "CloudSpan: final invoice for the quarter",
+    "sender": "imran@cloudspan.com",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E055",
+    "date": "2024-08-06",
+    "subject": "Re: ledger service: taking over maintenance",
+    "sender": "rohan.shetty@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E056",
+    "date": "2024-08-07",
+    "subject": "Promoted to Senior Recruiting Coordinator",
+    "sender": "anita.desai@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E057",
+    "date": "2024-08-12",
+    "subject": "Intro to the Myriad growth fund",
+    "sender": "gaurav@summit.vc",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E058",
+    "date": "2024-08-11",
+    "subject": "Ending the office lease: we are selling the building",
+    "sender": "george.t@gmail.com",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E059",
+    "date": "2024-08-11",
+    "subject": "Founder roundtable cancelled, will reschedule",
+    "sender": "sara.thomas@gmail.com",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E060",
+    "date": "2024-08-08",
+    "subject": "Founder roundtable invite for August 9",
+    "sender": "sara.thomas@gmail.com",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E061",
+    "date": "2024-08-08",
+    "subject": "Q3 board meeting agenda and logistics",
+    "sender": "aisha.khan@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E062",
+    "date": "2024-08-05",
+    "subject": "Starting Monday as Workplace Experience Lead",
+    "sender": "thomas.george@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E063",
+    "date": "2024-08-09",
+    "subject": "Payments squad PM handover",
+    "sender": "sandhya.pillai@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E064",
+    "date": "2024-08-10",
+    "subject": "Re: Payments squad PM handover, covering as interim PM",
+    "sender": "vivek.nair@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E065",
+    "date": "2024-08-06",
+    "subject": "Weekly planning time",
+    "sender": "anjali.verma@pinewicket.io",
+    "folder": "inbox",
+    "body": "Our usual weekly planning slot is 4 PM."
+  },
+  {
+    "email_id": "E066",
+    "date": "2024-08-10",
+    "subject": "Pen-test findings, sign-off needed",
+    "sender": "mohit.verma@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E067",
+    "date": "2024-08-06",
+    "subject": "Weekly planning time",
+    "sender": "arjun.menon@pinewicket.io",
+    "folder": "inbox",
+    "body": "Our usual weekly planning slot is 3 PM."
+  },
+  {
+    "email_id": "E068",
+    "date": "2024-08-09",
+    "subject": "Customer success onboarding plan",
+    "sender": "divya.menon@pinewicket.io",
+    "folder": "inbox",
+    "body": "Here is the onboarding plan for the customer success function now that I am taking it over. For the kickoff I would like our operations manager there; could you set up a 45 minute CS kickoff on August 23 at 3 PM with her?"
+  },
+  {
+    "email_id": "E069",
+    "date": "2024-08-09",
+    "subject": "Support escalation summary",
+    "sender": "kiran.rao@pinewicket.io",
+    "folder": "inbox"
+  },
+  {
+    "email_id": "E070",
+    "date": "2024-08-10",
+    "subject": "Partner pilot intro: FinBridge",
+    "sender": "rohan.kulkarni@pinewicket.io",
+    "folder": "inbox",
+    "body": "Intro to the FinBridge partnership pilot I am setting up; would love your go-ahead to kick it off."
+  },
+  {
+    "email_id": "E071",
+    "date": "2024-08-10",
+    "subject": "Compliance audit scope for sign-off",
+    "sender": "nidhi.kapoor@pinewicket.io",
+    "folder": "inbox",
+    "body": "Sharing the scope for the compliance audit I am leading. Please sign off so we can start."
+  }
+]

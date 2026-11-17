@@ -1,0 +1,11 @@
+{
+  "chat_id": "CH3",
+  "title": "Pinewicket Product Pod",
+  "kind": "group",
+  "participants": ["rohan.mehta", "C01", "C02", "C08", "C12"],
+  "messages": [
+    {"sender": "C01", "text": "Pushed the reconciliation fix to staging."},
+    {"sender": "C02", "text": "I may need to move the design review, will confirm the day."},
+    {"sender": "rohan.mehta", "text": "Thanks both. Let us keep the roadmap on track."}
+  ]
+}

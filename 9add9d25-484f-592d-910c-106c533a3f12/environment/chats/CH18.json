@@ -1,0 +1,11 @@
+{
+  "chat_id": "CH18",
+  "title": "Pinewicket CS Guild",
+  "kind": "group",
+  "participants": ["rohan.mehta", "C53", "C65"],
+  "messages": [
+    {"sender": "C53", "text": "Glad we sorted the split. I will keep running support day to day."},
+    {"sender": "C65", "text": "Thanks Kiran. Excited to take over running customer success starting this week."},
+    {"sender": "rohan.mehta", "text": "Welcome Divya, let us sync on the handover soon."}
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "chat_id": "CH11",
+  "title": "College Catch-up",
+  "kind": "group",
+  "participants": ["rohan.mehta", "C10", "C33", "C38"],
+  "messages": [
+    {"sender": "C33", "text": "Reunion photos from the batch meetup are up."},
+    {"sender": "C38", "text": "So good to see everyone after years."},
+    {"sender": "C33", "text": "Also I just moved to Pune for the new job, finally settling in."},
+    {"sender": "rohan.mehta", "text": "Great memories. Let us not wait this long again."}
+  ]
+}

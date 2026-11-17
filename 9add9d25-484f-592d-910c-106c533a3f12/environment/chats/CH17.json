@@ -1,0 +1,11 @@
+{
+  "chat_id": "CH17",
+  "title": "Pinewicket Growth Pod",
+  "kind": "group",
+  "participants": ["rohan.mehta", "C25", "C12", "C60"],
+  "messages": [
+    {"sender": "C25", "text": "Growth pod sync: campaign numbers are trending up."},
+    {"sender": "C12", "text": "Nice, I will pull the funnel breakdown."},
+    {"sender": "rohan.mehta", "text": "Great, let us review next week."}
+  ]
+}

@@ -1,0 +1,7 @@
+# Harbor RewardKit collapse: the two discovered dimensions (test_output, judge) are
+# combined by weighted mean into the top-level reward. Each dimension's weight is its
+# summed reward_weight: test_output is a programmatic dimension (fixed 1.0); judge takes
+# [judge].weight = 0.25, so the split is test_output 80% : judge 20%.
+[[reward]]
+name = "reward"
+aggregation = "weighted_mean"

@@ -1,0 +1,10 @@
+{
+  "chat_id": "CH6",
+  "title": "Arjun Rao",
+  "kind": "direct",
+  "participants": ["rohan.mehta", "C02"],
+  "messages": [
+    {"sender": "C02", "text": "Shall we lock the design sync for next week?"},
+    {"sender": "rohan.mehta", "text": "Yes, let me put something on the calendar."}
+  ]
+}

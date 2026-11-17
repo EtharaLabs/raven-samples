@@ -1,0 +1,10 @@
+{
+  "chat_id": "CH8",
+  "title": "Kavya Nair",
+  "kind": "direct",
+  "participants": ["rohan.mehta", "C03"],
+  "messages": [
+    {"sender": "C03", "text": "Moved to Bengaluru last week, let us catch up."},
+    {"sender": "rohan.mehta", "text": "Welcome back, dinner soon."}
+  ]
+}

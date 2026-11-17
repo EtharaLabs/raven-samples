@@ -1,0 +1,11 @@
+{
+  "chat_id": "CH12",
+  "title": "Pinewicket Ops",
+  "kind": "group",
+  "participants": ["rohan.mehta", "C18", "C40"],
+  "messages": [
+    {"sender": "C18", "text": "Confirmed we have offboarded DataForge and closed their account for good."},
+    {"sender": "C40", "text": "Noted, I will stop processing their invoices. CloudSpan and Brightline stay active."},
+    {"sender": "rohan.mehta", "text": "Thanks. Also we should get the quarterly review on the calendar soon, I will pick a date."}
+  ]
+}

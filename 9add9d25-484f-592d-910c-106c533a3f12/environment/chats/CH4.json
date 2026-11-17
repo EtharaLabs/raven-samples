@@ -1,0 +1,11 @@
+{
+  "chat_id": "CH4",
+  "title": "Mehta Family",
+  "kind": "group",
+  "participants": ["rohan.mehta", "C06", "C07"],
+  "messages": [
+    {"sender": "C06", "text": "Call me when you are free, beta."},
+    {"sender": "C07", "text": "Are you coming home for Diwali?"},
+    {"sender": "rohan.mehta", "text": "Trying to, will confirm next week."}
+  ]
+}

@@ -1,0 +1,70 @@
+schema_version = "1.4"
+reward_type = "bounded_continuous"
+
+artifacts = [{ source = "/app/actions.json" }]
+
+[task]
+name = "ethara/9add9d25-484f-592d-910c-106c533a3f12"
+version = "1.0.0"
+description = "A reconstructed ARE Mobile universe (persona-rooted apps as structured data) with a single-turn, multi-part user request over a large, noisy universe (67 contacts, 71 inbox emails, 27 calendar events, 19 chats). The request names no target by id: every part refers to people and things by role, relationship, or event, so each write requires a multi-app join to resolve the one correct target, and a shallow reader gets routine writes wrong. Twenty-five clear asks resolve, by careful cross-referencing, to exactly one target each (twenty-seven write actions in total: the baseline twenty, since clearing the offboarded vendor deletes three emails, plus seven writes across three dependency chains where a later write's target derives from an earlier resolution); fourteen parts are genuinely unresolvable and surface only after the same cross-referencing, each a different taxonomy kind with a well-formed first-match trap, for example: a chat title shared by two startup groups (no unique referent), a quarterly review for next Tuesday (no resolvable date or time), a reply to Priya's email about the Q3 budget (no email matches both sender and topic), and a call with the investor who sent the term sheet (two investors each sent one). The agent must complete the twenty-seven join-resolved writes and report all fourteen ambiguities via send_message_to_user without guessing a target. Graded by an ARE-style write-action verifier as a weighted mean over per-fact criteria plus a single bounded, work-conditional side-effect gate worth 35% of the deterministic dimension (earned only when the agent completes most of the clear writes and springs no trap), so a consequential wrong write is penalised meaningfully without any single fact being weighted as the sum of the others and without a half-score cliff. This is the single-turn Ambiguity subset of Gaia2; it reconstructs the Mobile environment as static data and does not run on the live ARE runtime."
+authors = [{ name = "mansa.gupta", email = "mansa.gupta@ethara.ai" }]
+keywords = ["gaia2", "are", "ambiguity", "mobile", "underspecified-intent", "search-hardness", "cross-app-join", "write-action-verifier"]
+
+[metadata]
+capability = "underspecified_intent"
+archetype = "AR7"
+intended_realization = "gaia2_ambiguity_mobile_single_turn"
+reference_benchmark = "ARE / GAIA2"
+mobile_apps = ["persona", "contacts", "chats", "emails", "calendar"]
+maturity = "draft"
+null_floor = 0.0
+discrimination_weight = 1.0
+platforms = ["linux/amd64", "linux/arm64"]
+pass_rates = []
+
+[agent]
+timeout_sec = 900
+network_mode = "no-network"
+user = "1000"
+
+[environment]
+# No docker_image: the agent image builds from environment/Dockerfile, which bakes the universe
+# files. The agent reads JSON and writes actions.json, so it needs no deps and no network.
+network_mode = "no-network"
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 1024
+storage_mb = 2048
+gpus = 0
+
+[verifier]
+timeout_sec = 600
+environment_mode = "separate"
+network_mode = "allowlist"
+
+[verifier.env]
+# The codex agent judge reads its model credential from the host at grade time; both the API key
+# and the codex access token are templated so whichever the host provides resolves.
+OPENAI_API_KEY = "${OPENAI_API_KEY:-}"
+CODEX_ACCESS_TOKEN = "${CODEX_ACCESS_TOKEN:-}"
+
+[verifier.environment]
+# No docker_image: the verifier image builds from tests/Dockerfile (separate mode, tests/ build
+# context) with rewardkit and the codex CLI baked in. The build phase has network; the grade run
+# is allowlisted to the judge's model host only. Built for the [metadata].platforms.
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "chatgpt.com", "auth.openai.com"]
+
+[metadata.upstream_provenance]
+origin = "original"
+provenance_date = "2026-10-29"
+source_kind = "synthetic"
+
+[metadata.upstream_provenance.source]
+generator = "FORGE run forge-manthan-20261028-112219 (raven, EtharaOrion)"
+generation_inputs = ["./brief/2509.17158-are-scaling-up-agent-environments-and-evaluations.md", "./.memory/forge_view.yaml", "./.seed/runs/forge-manthan-20261028-112219/research.md", "./touchstones/ambiguity/"]
+
+[solution.env]
+# Native Harbor runs solve.sh with HARBOR_WORKSPACE unset and no cd, so actions.json would land
+# off the collection path; pin it to the agent workdir (/app) where Harbor does `cp main:actions.json`.
+HARBOR_WORKSPACE = "/app"

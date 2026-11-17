@@ -1,0 +1,10 @@
+{
+  "chat_id": "CH19",
+  "title": "Nidhi Kapoor",
+  "kind": "direct",
+  "participants": ["rohan.mehta", "C67"],
+  "messages": [
+    {"sender": "C67", "text": "Pinging you on the compliance audit thread, the scope is ready for your sign-off."},
+    {"sender": "rohan.mehta", "text": "Looking now, will confirm shortly."}
+  ]
+}

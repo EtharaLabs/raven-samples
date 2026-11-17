@@ -1,0 +1,10 @@
+{
+  "chat_id": "CH5",
+  "title": "Priya Sharma",
+  "kind": "direct",
+  "participants": ["rohan.mehta", "C01"],
+  "messages": [
+    {"sender": "C01", "text": "Can you approve my leave for next Friday?"},
+    {"sender": "rohan.mehta", "text": "Approved. Enjoy the long weekend."}
+  ]
+}

@@ -1,0 +1,10 @@
+{
+  "chat_id": "CH7",
+  "title": "Northstar Diligence",
+  "kind": "group",
+  "participants": ["rohan.mehta", "C20"],
+  "messages": [
+    {"sender": "C20", "text": "Sharing the diligence checklist for the round."},
+    {"sender": "rohan.mehta", "text": "Thanks Vivek, I will fill it this week."}
+  ]
+}
