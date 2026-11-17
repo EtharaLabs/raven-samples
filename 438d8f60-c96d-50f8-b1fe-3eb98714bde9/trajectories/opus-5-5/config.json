@@ -1,0 +1,36 @@
+{
+    "job_name": "2026-11-17__13-39-18",
+    "jobs_dir": "/Users/mac/Documents/staging/run-root/jobs/438d8f60",
+    "verifier": {
+        "env": {
+            "CLAUDE_CODE_OAUTH_TOKEN": "${CLAUDE_CODE_OAUTH_TOKEN}",
+            "CLAUDE_FORCE_OAUTH": "****",
+            "RAVEN_JUDGE_LIVE": "1",
+            "RAVEN_JUDGE_USE_CLI": "1",
+            "RAVEN_JUDGE_MODEL": "${RAVEN_JUDGE_MODEL:-claude-opus-5-5}"
+        }
+    },
+    "agents": [
+        {
+            "name": "claude-code",
+            "model_name": "anthropic/claude-opus-5-5",
+            "extra_allowed_hosts": [
+                "api.anthropic.com"
+            ],
+            "kwargs": {
+                "disable_web_search": true
+            },
+            "env": {
+                "CLAUDE_CODE_OAUTH_TOKEN": "${CLAUDE_CODE_OAUTH_TOKEN}",
+                "CLAUDE_FORCE_OAUTH": "****",
+                "DISABLE_TELEMETRY": "1",
+                "DISABLE_AUTOUPDATER": "1"
+            }
+        }
+    ],
+    "tasks": [
+        {
+            "path": "/Users/mac/Documents/staging/run-root/jobs/438d8f60/.raven-staged/438d8f60-c96d-50f8-b1fe-3eb98714bde9"
+        }
+    ]
+}

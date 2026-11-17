@@ -1,0 +1,33 @@
+{
+    "task": {
+        "path": "/Users/mac/Documents/staging/run-root/jobs/9add9d25/.raven-staged/9add9d25-484f-592d-910c-106c533a3f12"
+    },
+    "trial_name": "9add9d25-484f-592d-910c-106c533a__FbuWmE5",
+    "trials_dir": "/Users/mac/Documents/staging/run-root/jobs/9add9d25/2026-11-17__11-57-38",
+    "agent": {
+        "name": "claude-code",
+        "model_name": "anthropic/claude-opus-5-5",
+        "extra_allowed_hosts": [
+            "api.anthropic.com"
+        ],
+        "kwargs": {
+            "disable_web_search": true
+        },
+        "env": {
+            "CLAUDE_CODE_OAUTH_TOKEN": "${CLAUDE_CODE_OAUTH_TOKEN}",
+            "CLAUDE_FORCE_OAUTH": "****",
+            "DISABLE_TELEMETRY": "1",
+            "DISABLE_AUTOUPDATER": "1"
+        }
+    },
+    "verifier": {
+        "env": {
+            "CLAUDE_CODE_OAUTH_TOKEN": "${CLAUDE_CODE_OAUTH_TOKEN}",
+            "CLAUDE_FORCE_OAUTH": "****",
+            "RAVEN_JUDGE_LIVE": "1",
+            "RAVEN_JUDGE_USE_CLI": "1",
+            "RAVEN_JUDGE_MODEL": "${RAVEN_JUDGE_MODEL:-claude-opus-5-5}"
+        }
+    },
+    "job_id": "ec54ab30-611f-42b4-8bae-28b6e988885f"
+}

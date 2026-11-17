@@ -1,0 +1,26 @@
+[
+  {
+    "source": "/logs/artifacts",
+    "destination": "artifacts/logs/artifacts",
+    "type": "directory",
+    "status": "ok",
+    "service": null,
+    "exclude": []
+  },
+  {
+    "source": "/authority/eventlog.json",
+    "destination": "artifacts/eventlog.json",
+    "type": "file",
+    "status": "ok",
+    "service": "oracle",
+    "exclude": []
+  },
+  {
+    "source": "/authority/appstate.json",
+    "destination": "artifacts/appstate.json",
+    "type": "file",
+    "status": "ok",
+    "service": "oracle",
+    "exclude": []
+  }
+]

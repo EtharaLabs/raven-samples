@@ -1,0 +1,170 @@
+[
+  {
+    "tool": "reply_email",
+    "args": {
+      "email_id": "E020",
+      "body": "Hi Nadia - count me in for the team lunch Friday at noon. Thanks for organizing!"
+    }
+  },
+  {
+    "tool": "reply_email",
+    "args": {
+      "email_id": "E013",
+      "body": "Hi Gregory - yes, we'd like to renew the lease for another year at the same rate. Please send the papers over when ready. Thanks!"
+    }
+  },
+  {
+    "tool": "reply_email",
+    "args": {
+      "email_id": "E047",
+      "body": "Hi Dev - thanks so much for keeping Atlas moving while I was out. Confirmed: I'll take coordination of Atlas back. Thursday at 3 works for the handoff sync - I'll put it on the calendar."
+    }
+  },
+  {
+    "tool": "reply_email",
+    "args": {
+      "email_id": "E008",
+      "body": "Hi Priya - thanks for your patience while I was out. You have my sign-off on the contractor onboarding contract for the two new platform-team contractors."
+    }
+  },
+  {
+    "tool": "update_contact",
+    "args": {
+      "contact_id": "C03",
+      "field": "email",
+      "value": "alex.reyes@northwind.example"
+    }
+  },
+  {
+    "tool": "send_chat_message",
+    "args": {
+      "chat_id": "CH1",
+      "text": "Status update from Dana: I'm back from leave as of today and catching up. I'll review the Vega launch checklist this week and flag anything that needs attention here."
+    }
+  },
+  {
+    "tool": "reply_email",
+    "args": {
+      "email_id": "E005",
+      "body": "Hi Rachel - thank you, and sorry for the slow reply; I've just returned from two weeks of leave. I'm delighted to receive the Helia Staff PM offer and remain very interested. I'll follow up shortly on next steps."
+    }
+  },
+  {
+    "tool": "reply_email",
+    "args": {
+      "email_id": "E050",
+      "body": "Hi Grace - thanks for the heads-up. I've updated your cell in my contacts to +1-512-555-0188."
+    }
+  },
+  {
+    "tool": "reply_email",
+    "args": {
+      "email_id": "E032",
+      "body": "Hi Frank - confirming I'll attend the Q2 planning offsite on March 24."
+    }
+  },
+  {
+    "tool": "add_calendar_event",
+    "args": {
+      "title": "Dentist cleaning",
+      "date": "2026-03-18",
+      "time": "10:00",
+      "duration_min": 60,
+      "attendees": [
+        "C29"
+      ]
+    }
+  },
+  {
+    "tool": "add_calendar_event",
+    "args": {
+      "title": "Atlas handoff sync",
+      "date": "2026-03-12",
+      "time": "15:00",
+      "duration_min": 60,
+      "attendees": [
+        "C36"
+      ]
+    }
+  },
+  {
+    "tool": "add_calendar_event",
+    "args": {
+      "title": "1:1 with Karen",
+      "date": "2026-03-13",
+      "time": "11:00",
+      "duration_min": 30,
+      "attendees": [
+        "C01"
+      ]
+    }
+  },
+  {
+    "tool": "reply_email",
+    "args": {
+      "email_id": "E017",
+      "body": "Hi Raj - thanks for taking over Helios. Yes, I'll join the Helios sync Thursdays at 2 - please add me."
+    }
+  },
+  {
+    "tool": "update_contact",
+    "args": {
+      "contact_id": "C08",
+      "field": "job",
+      "value": "Head of Data, Vireo"
+    }
+  },
+  {
+    "tool": "reply_email",
+    "args": {
+      "email_id": "E052",
+      "body": "Hi Ruben - thanks! Monday March 16 at 3:00 PM works for me for the Onboardly walkthrough. Please send the dial-in."
+    }
+  },
+  {
+    "tool": "send_chat_message",
+    "args": {
+      "chat_id": "CH10",
+      "text": "Ack - I've got the pager back. Thanks Owen for covering on-call while I was out."
+    }
+  },
+  {
+    "tool": "delete_email",
+    "args": {
+      "email_id": "E027"
+    }
+  },
+  {
+    "tool": "update_contact",
+    "args": {
+      "contact_id": "C46",
+      "field": "phone",
+      "value": "+1-512-555-0188"
+    }
+  },
+  {
+    "tool": "send_chat_message",
+    "args": {
+      "chat_id": "CH15",
+      "text": "Heads-up all: I'm back and picking Atlas coordination back up from Dev. Thanks Dev for keeping it moving - we're doing a handoff sync Thursday at 3, and status, blockers and handoffs can come to me here from now on."
+    }
+  },
+  {
+    "tool": "add_calendar_event",
+    "args": {
+      "title": "Onboarding tooling demo",
+      "date": "2026-03-16",
+      "time": "15:00",
+      "duration_min": 60,
+      "attendees": [
+        "C48"
+      ]
+    }
+  },
+  {
+    "tool": "send_message_to_user",
+    "args": {
+      "content": "Done:\n- RSVP'd yes to Nadia's team lunch Friday at noon (E020). It's already on your calendar.\n- Confirmed the lease renewal with Gregory Tan (E013). I ignored the UrbanNest ad.\n- Told Dev Shah you'll take Atlas back and that Thursday at 3 works (E047). Added \"Atlas handoff sync\" on Thu Mar 12 15:00 for 60 min with Dev, and posted a heads-up in the Atlas channel (not the Atlas watercooler).\n- Gave sign-off on Priya Nair's contractor onboarding contract (E008). This is the one that asks for your sign-off; the Lumen renewal from Priya Shah only asks you to confirm terms, so I left it alone.\n- Changed Alex Reyes's email to alex.reyes@northwind.example.\n- Posted a holding status in the Vega channel: back today, reviewing the launch checklist. You didn't give me any status content, so post the real update yourself.\n- Replied to Rachel Donovan (Peakline/Helia, the recruiter you'd been talking to). I thanked her and said you're still very interested, but I did NOT formally accept the offer. Accepting is your call, so tell me if you want to.\n- Replied to Grace Vance and set her phone to +1-512-555-0188.\n- Confirmed the Q2 planning offsite on Mar 24 with Frank (E032). It's already on your calendar.\n- Added the dentist cleaning on Wed Mar 18 10:00 for 60 min. That's the confirmed booking (E010), not the earlier two-option email.\n- Added \"1:1 with Karen\" on Fri Mar 13 11:00 for 30 min, which is the time she moved it to. The old Thu Mar 12 15:00 entry (EV03) is still there. I can't delete calendar events, so please remove it.\n- Told Raj Menon, who runs Helios now instead of Clara, that you'll join the Thursday 2pm sync.\n- Changed Wei Chen's title to Head of Data, Vireo.\n- Accepted Ruben Diaz's Onboardly walkthrough and added \"Onboarding tooling demo\" on Mon Mar 16 15:00 for 60 min with Ruben.\n- Acked the on-call handover in the On-call chat.\n- Deleted the duplicate OfficeHub order confirmation (E027) and kept E026.\n\nNot done:\n- Investor term sheet: two came in, from Apex (Victor Lang) and Ridge (Nina Rao). Karen also said in the confidential investors chat not to reply to either until you review them together.\n- Redesign feedback: there are two redesigns, Hana's onboarding redesign and Sam Doyle's settings page. I also don't have your feedback. Tell me which one and what to say.\n- Budget offsite: Frank cancelled it (E034), so there's nothing to confirm.\n- Helios sync on your calendar: Raj's Thursday 2pm sync (EV05, Mar 12) is already there, so I didn't add a duplicate. The Wed Mar 11 \"Helios sync\" (EV04) is Clara's old one and is probably stale; you may want to remove it.\n- Sam about the offsite venue: there are two Sams. Sam Patel asked about the team offsite (downtown loft vs lake house) and Sam Doyle asked about the design offsite. You also didn't give me a venue choice.\n- Launch channel update: there are two channels, \"Launch\" (Vega go-live) and \"Launch Team\" (GTM/comms), and I don't have the update content.\n- Vega standup: it's already on your calendar twice, with Chris Dawson on Mar 10 at 10:00 and with Alex Kim on Mar 10 at 16:00. There's also a 15-min one on Mar 11 that you're not invited to. I don't know which one you meant, so I added nothing."
+    }
+  }
+]

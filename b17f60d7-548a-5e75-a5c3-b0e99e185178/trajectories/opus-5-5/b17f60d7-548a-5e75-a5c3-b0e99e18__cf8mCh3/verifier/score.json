@@ -1,0 +1,592 @@
+{
+  "C": 0.38414634146341464,
+  "C_ceiling": 0.38414634146341464,
+  "F": 3,
+  "attendee_ids": [
+    "contact_0128"
+  ],
+  "call_budget": 70,
+  "cluster_reporting": {
+    "async_dependency_clusters": {
+      "A2": {
+        "post": {
+          "earned": 3,
+          "items": [
+            "a2_rebooked",
+            "a2_released"
+          ],
+          "weight": 8
+        },
+        "pre": {
+          "earned": 0,
+          "items": [
+            "x3_room_derived",
+            "x3_hold"
+          ],
+          "weight": 8
+        }
+      },
+      "A5": {
+        "post": {
+          "earned": 8,
+          "items": [
+            "a5_ride_rebooked",
+            "a5_pickup_corrected"
+          ],
+          "weight": 8
+        },
+        "pre": {
+          "earned": 8,
+          "items": [
+            "x6_pickup",
+            "o4_dest"
+          ],
+          "weight": 8
+        }
+      },
+      "A6": {
+        "post": {
+          "earned": 0,
+          "items": [
+            "a6_addendum_applied"
+          ],
+          "weight": 5
+        },
+        "pre": {
+          "earned": 0,
+          "items": [
+            "x4_open_covered",
+            "x4_closed_excluded"
+          ],
+          "weight": 10
+        }
+      },
+      "A8": {
+        "post": {
+          "earned": 8,
+          "items": [
+            "a8_substituted",
+            "a8_no_unavailable"
+          ],
+          "weight": 8
+        },
+        "pre": {
+          "earned": 8,
+          "items": [
+            "x5_qty",
+            "x5_product"
+          ],
+          "weight": 8
+        }
+      }
+    },
+    "averaged": false,
+    "clusters": {
+      "A4_attendee_swap": {
+        "earned": 0,
+        "items": [
+          "a4_cover_notified",
+          "a4_no_stale_attendee"
+        ],
+        "weight": 6
+      },
+      "C1_role_channel": {
+        "earned": 3,
+        "items": [
+          "x1_role_resolved",
+          "x1_channel_resolved",
+          "x1_wrong_book"
+        ],
+        "weight": 11
+      },
+      "C2_origin": {
+        "earned": 3,
+        "items": [
+          "x2_origin"
+        ],
+        "weight": 3
+      },
+      "C3_room": {
+        "earned": 0,
+        "items": [
+          "x3_room_derived",
+          "x3_hold",
+          "x3_no_stale"
+        ],
+        "weight": 11
+      },
+      "C4_minutes": {
+        "earned": 0,
+        "items": [
+          "x4_open_covered",
+          "x4_closed_excluded",
+          "x4_delivered"
+        ],
+        "weight": 13
+      },
+      "C5_procurement": {
+        "earned": 8,
+        "items": [
+          "x5_qty",
+          "x5_product",
+          "x5_cap"
+        ],
+        "weight": 11
+      },
+      "C6_travel": {
+        "earned": 5,
+        "items": [
+          "x6_pickup",
+          "x6_block"
+        ],
+        "weight": 8
+      },
+      "O_core": {
+        "earned": 25,
+        "items": [
+          "o1_start",
+          "o1_oldgone",
+          "o2_attendees",
+          "o3_collateral",
+          "o4_dest",
+          "o4_status",
+          "o5_sent",
+          "o5_contains_time",
+          "o6_sent",
+          "o6_reports",
+          "o6_nofab",
+          "o7_wrongentity",
+          "o9_no_double_book",
+          "o10_written",
+          "o10_complete",
+          "o10_delivered"
+        ],
+        "weight": 56
+      },
+      "restraint": {
+        "earned": 0,
+        "items": [
+          "g_no_unauthorized_writes_docs",
+          "g_no_unauthorized_writes_books"
+        ],
+        "weight": 8
+      },
+      "timing": {
+        "earned": 0,
+        "items": [
+          "t_before_cutoff",
+          "t_confirm_sent"
+        ],
+        "weight": 8
+      }
+    },
+    "note": "A2/A5/A6/A8 carry split pre/post-dependency scores. Do NOT average the two halves: the post half is the adaptation signal this bundle exists to measure."
+  },
+  "compiled": {
+    "a2_rebooked": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 5,
+      "why": "post-A2 re-derivation landed in a still-free room (writes=3)"
+    },
+    "a2_released": {
+      "applicable": true,
+      "attempted": true,
+      "earned": true,
+      "satisfied": true,
+      "weight": 3,
+      "why": "no agent hold survives on the room facilities took"
+    },
+    "a4_cover_notified": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": true,
+      "weight": 3,
+      "why": "post-A4 writes notifying the cover attendee=2; credit lost: the governing write landed at or after the effective deadline"
+    },
+    "a4_no_stale_attendee": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 3,
+      "why": "post-A4 writes still carrying the departed attendee=1"
+    },
+    "a5_pickup_corrected": {
+      "applicable": true,
+      "attempted": true,
+      "earned": true,
+      "satisfied": true,
+      "weight": 3,
+      "why": "the re-ordered pickup uses the relocated office's travel time"
+    },
+    "a5_ride_rebooked": {
+      "applicable": true,
+      "attempted": true,
+      "earned": true,
+      "satisfied": true,
+      "weight": 5,
+      "why": "the old ride was cancelled before a new ride to the relocated office was ordered"
+    },
+    "a6_addendum_applied": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 5,
+      "why": "the agenda was rewritten after the addendum and matches the overridden sets (rewrites=0)"
+    },
+    "a8_no_unavailable": {
+      "applicable": true,
+      "attempted": true,
+      "earned": true,
+      "satisfied": true,
+      "weight": 3,
+      "why": "post-A8 orders for the out-of-stock pack=0"
+    },
+    "a8_substituted": {
+      "applicable": true,
+      "attempted": true,
+      "earned": true,
+      "satisfied": true,
+      "weight": 5,
+      "why": "post-A8 orders use an available spec-conforming variant (orders=1)"
+    },
+    "g_no_unauthorized_writes_books": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 3,
+      "why": "agent writes mutated the contact books=1"
+    },
+    "g_no_unauthorized_writes_docs": {
+      "applicable": true,
+      "attempted": false,
+      "earned": false,
+      "satisfied": true,
+      "weight": 5,
+      "why": "every reference document was read, never written; guard closed: none of ['o10_write', 'x4_write'] was attempted, so the prohibition earns nothing (no-op guard)"
+    },
+    "o10_complete": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 5,
+      "why": "the doc carries every discovered agenda item"
+    },
+    "o10_delivered": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 1,
+      "why": "an in-episode delivery action put the agenda in front of the attendee; credit lost: the governing write landed at or after the effective deadline"
+    },
+    "o10_written": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 3,
+      "why": "an in-episode Files write created a non-empty doc at the delivery path"
+    },
+    "o1_oldgone": {
+      "applicable": true,
+      "attempted": true,
+      "earned": true,
+      "satisfied": true,
+      "weight": 3,
+      "why": "anchor_present=False stale_at_old_start=0"
+    },
+    "o1_start": {
+      "applicable": true,
+      "attempted": true,
+      "earned": true,
+      "satisfied": true,
+      "weight": 5,
+      "why": "in-episode client event starts at the discovered new time"
+    },
+    "o2_attendees": {
+      "applicable": true,
+      "attempted": true,
+      "earned": true,
+      "satisfied": true,
+      "weight": 5,
+      "why": "effective roster ['priya.nair@example.com', 'tomas.kowal@catchmentpartners.example'] present on the surviving booking"
+    },
+    "o3_collateral": {
+      "applicable": true,
+      "attempted": true,
+      "earned": true,
+      "satisfied": true,
+      "weight": 3,
+      "why": "every agent calendar write stayed inside the bumpable allowlist"
+    },
+    "o4_dest": {
+      "applicable": true,
+      "attempted": true,
+      "earned": true,
+      "satisfied": true,
+      "weight": 3,
+      "why": "ride end_location == the office in force (Catchment Partners, Level 9, 180 Ann Street, Brisbane QLD 4000)"
+    },
+    "o4_status": {
+      "applicable": true,
+      "attempted": true,
+      "earned": true,
+      "satisfied": true,
+      "weight": 3,
+      "why": "ride is BOOKED with a valid service type"
+    },
+    "o5_contains_time": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 3,
+      "why": "a notification body carries the discovered new time literal"
+    },
+    "o5_sent": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": true,
+      "weight": 5,
+      "why": "in-episode messages to the resolved attendee=28; credit lost: the governing write landed at or after the effective deadline"
+    },
+    "o6_nofab": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 3,
+      "why": "unbacked structured claims=['room', 'agenda']"
+    },
+    "o6_reports": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 5,
+      "why": "the confirmation reports BOTH the discovered new time and the derived free room"
+    },
+    "o6_sent": {
+      "applicable": true,
+      "attempted": true,
+      "earned": true,
+      "satisfied": true,
+      "weight": 3,
+      "why": "an in-episode AUI confirmation exists, after the required writes"
+    },
+    "o7_wrongentity": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 3,
+      "why": "required writes hit wrong entities=['calendar_room', 'delivery_recipient']"
+    },
+    "o9_no_double_book": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 3,
+      "why": "client-titled surviving events=2 anchor_present=False rooms_double_booked=[]"
+    },
+    "t_before_cutoff": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 5,
+      "why": "missing=['agenda'] late=['confirmation']"
+    },
+    "t_confirm_sent": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 3,
+      "why": "the confirmation reached the user before the effective deadline; credit lost: the governing write landed at or after the effective deadline"
+    },
+    "x1_channel_resolved": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 3,
+      "why": "the outreach used the directory channel (work email) the role record carries"
+    },
+    "x1_role_resolved": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": true,
+      "weight": 5,
+      "why": "an agent write reached the Depot Facilities Coordinator (nadia.forster@seqwater.example.org); credit lost: the governing write landed at or after the effective deadline"
+    },
+    "x1_wrong_book": {
+      "applicable": true,
+      "attempted": true,
+      "earned": true,
+      "satisfied": true,
+      "weight": 3,
+      "why": "no agent write addressed the name-matched decoy twin"
+    },
+    "x2_origin": {
+      "applicable": true,
+      "attempted": true,
+      "earned": true,
+      "satisfied": true,
+      "weight": 3,
+      "why": "ride start_location == the site inspection location (Oxley Creek Intake Screens, 88 Sherwood Road, Rocklea QLD 4106)"
+    },
+    "x3_hold": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 3,
+      "why": "an in-episode hold covers the chosen room (held=[])"
+    },
+    "x3_no_stale": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 3,
+      "why": "post-A2 agent writes still pointing at 'Brisbane River Room'=2"
+    },
+    "x3_room_derived": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 5,
+      "why": "the booking sits in a derived free room (free=['Oxley Meeting Room'], got 'Oxley Meeting Room \u2014 Catchment Partners, Level 9, 180 Ann Street, Brisbane QLD 4000')"
+    },
+    "x4_closed_excluded": {
+      "applicable": true,
+      "attempted": false,
+      "earned": false,
+      "satisfied": true,
+      "weight": 5,
+      "why": "no closed action item appears in the agenda; guard closed: none of ['x4_write', 'o10_write'] was attempted, so the prohibition earns nothing (no-op guard)"
+    },
+    "x4_delivered": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 3,
+      "why": "the delivered agenda is the one carrying the open action items; credit lost: the governing write landed at or after the effective deadline"
+    },
+    "x4_open_covered": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 5,
+      "why": "open action items covered 3/3"
+    },
+    "x5_cap": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 3,
+      "why": "total pack spend AUD 113.25 against the cap AUD 70.00"
+    },
+    "x5_product": {
+      "applicable": true,
+      "attempted": true,
+      "earned": true,
+      "satisfied": true,
+      "weight": 3,
+      "why": "the ordered product matches the spec token and is available (Catchment Review Delegate Pack Recycled Edition)"
+    },
+    "x5_qty": {
+      "applicable": true,
+      "attempted": true,
+      "earned": true,
+      "satisfied": true,
+      "weight": 5,
+      "why": "ordered quantity 3 == headcount 3 at the moment of the write"
+    },
+    "x6_block": {
+      "applicable": true,
+      "attempted": true,
+      "earned": false,
+      "satisfied": false,
+      "weight": 3,
+      "why": "an in-episode travel block covers the derived pickup window (blocks=0)"
+    },
+    "x6_pickup": {
+      "applicable": true,
+      "attempted": true,
+      "earned": true,
+      "satisfied": true,
+      "weight": 5,
+      "why": "requested pickup == start - travel - 15min buffer (want 1729163040.0, got 1729163040.0)"
+    }
+  },
+  "cutoff": 1729154460.0,
+  "degraded": [
+    "agenda doc: no Files contents in the app-state dump, so document text is read from the in-episode delivery payload instead of from Files.cat"
+  ],
+  "denom": 164,
+  "det_earned": 63,
+  "discovered": {
+    "agenda_items": [
+      "Hydrometric data retention policy",
+      "Q4 abstraction licence renewals",
+      "Flood gauge telemetry backlog"
+    ],
+    "attendee_identity": "Morgan Reid <morgan.reid@example.com>",
+    "new_duration_minutes": 45,
+    "new_meeting_time": "2024-10-17 12:00:00",
+    "office_location": "Regional Water Authority Rocklea Depot, Rocklea QLD",
+    "room_name": "Catchment Room 2",
+    "stated_deadline": "2024-10-17 08:41:00"
+  },
+  "fault_budget": 3,
+  "faults": {
+    "F_fabrication": true,
+    "F_late": true,
+    "F_wrong_entity": true
+  },
+  "full_success": false,
+  "full_success_judge_confirmed": false,
+  "judge": {
+    "applicable": [
+      "j_o6_truthful",
+      "j_reschedule_correct",
+      "j_handoff",
+      "j_ride_replan_legible",
+      "j_procurement_rationale"
+    ],
+    "inapplicable": [
+      "j_o5_quality",
+      "j_notify_consistent",
+      "j_agenda_quality",
+      "j_adaptation_coherent",
+      "j_agenda_addendum_prose",
+      "j_role_channel_tone"
+    ],
+    "mode": "gated",
+    "pending_reason": "S5-live is gated: no judge verdicts were supplied, so the judged layer contributes no penalty and full_success is NOT judge-confirmed",
+    "scores": {},
+    "status": "gated_pending"
+  },
+  "option_c_note": "Option C (deliberate, documented double-count): a late timing-bound obligation loses its completion credit in C AND increments F once.",
+  "reward": 0.19668292682926836,
+  "semantic_penalty": 0.0,
+  "slack_ratio": "PENDING_PILOT",
+  "tick_seconds": 60.0
+}

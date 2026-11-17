@@ -1,0 +1,568 @@
+{
+  "reward": {
+    "score": 0.629,
+    "criteria": [
+      {
+        "name": "are_fact:causality",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: causality"
+      },
+      {
+        "name": "are_fact:message_sanity",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: message_sanity"
+      },
+      {
+        "name": "are_fact:no_guess_AMB_CHAT",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 2.0,
+        "description": "ARE compiled fact: no_guess_AMB_CHAT"
+      },
+      {
+        "name": "are_fact:no_guess_AMB_CROSSREF",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 2.0,
+        "description": "ARE compiled fact: no_guess_AMB_CROSSREF"
+      },
+      {
+        "name": "are_fact:no_guess_AMB_DELETED",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 2.0,
+        "description": "ARE compiled fact: no_guess_AMB_DELETED"
+      },
+      {
+        "name": "are_fact:no_guess_AMB_DESIGNER",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 2.0,
+        "description": "ARE compiled fact: no_guess_AMB_DESIGNER"
+      },
+      {
+        "name": "are_fact:no_guess_AMB_EVENT",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 2.0,
+        "description": "ARE compiled fact: no_guess_AMB_EVENT"
+      },
+      {
+        "name": "are_fact:no_guess_AMB_INVOICE",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 2.0,
+        "description": "ARE compiled fact: no_guess_AMB_INVOICE"
+      },
+      {
+        "name": "are_fact:no_guess_AMB_LEASE",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 2.0,
+        "description": "ARE compiled fact: no_guess_AMB_LEASE"
+      },
+      {
+        "name": "are_fact:no_guess_AMB_ONCALL",
+        "value": 0.0,
+        "raw": 0.0,
+        "weight": 2.0,
+        "description": "ARE compiled fact: no_guess_AMB_ONCALL"
+      },
+      {
+        "name": "are_fact:no_guess_AMB_PMSQUAD",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 2.0,
+        "description": "ARE compiled fact: no_guess_AMB_PMSQUAD"
+      },
+      {
+        "name": "are_fact:no_guess_AMB_RENEWAL",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 2.0,
+        "description": "ARE compiled fact: no_guess_AMB_RENEWAL"
+      },
+      {
+        "name": "are_fact:no_guess_AMB_REPLY",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 2.0,
+        "description": "ARE compiled fact: no_guess_AMB_REPLY"
+      },
+      {
+        "name": "are_fact:no_guess_AMB_SPRINT",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 2.0,
+        "description": "ARE compiled fact: no_guess_AMB_SPRINT"
+      },
+      {
+        "name": "are_fact:no_guess_AMB_TITLE",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 2.0,
+        "description": "ARE compiled fact: no_guess_AMB_TITLE"
+      },
+      {
+        "name": "are_fact:no_guess_AMB_UNIT",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 2.0,
+        "description": "ARE compiled fact: no_guess_AMB_UNIT"
+      },
+      {
+        "name": "are_fact:no_unauthorized_writes",
+        "value": 0.0,
+        "raw": 0.0,
+        "weight": 50.076923,
+        "description": "ARE compiled fact: no_unauthorized_writes"
+      },
+      {
+        "name": "are_fact:tool_name_count",
+        "value": 0.0,
+        "raw": 0.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: tool_name_count"
+      },
+      {
+        "name": "are_fact:write_A1",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A1"
+      },
+      {
+        "name": "are_fact:write_A10",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A10"
+      },
+      {
+        "name": "are_fact:write_A11",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A11"
+      },
+      {
+        "name": "are_fact:write_A12",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A12"
+      },
+      {
+        "name": "are_fact:write_A13",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A13"
+      },
+      {
+        "name": "are_fact:write_A14",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A14"
+      },
+      {
+        "name": "are_fact:write_A15",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A15"
+      },
+      {
+        "name": "are_fact:write_A15__attendee_C11",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A15__attendee_C11"
+      },
+      {
+        "name": "are_fact:write_A15__attendee_C28",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A15__attendee_C28"
+      },
+      {
+        "name": "are_fact:write_A15__date",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A15__date"
+      },
+      {
+        "name": "are_fact:write_A15__duration_min",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A15__duration_min"
+      },
+      {
+        "name": "are_fact:write_A15__time",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A15__time"
+      },
+      {
+        "name": "are_fact:write_A16",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A16"
+      },
+      {
+        "name": "are_fact:write_A17",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A17"
+      },
+      {
+        "name": "are_fact:write_A17__field",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A17__field"
+      },
+      {
+        "name": "are_fact:write_A17__value",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A17__value"
+      },
+      {
+        "name": "are_fact:write_A18",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A18"
+      },
+      {
+        "name": "are_fact:write_A19",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A19"
+      },
+      {
+        "name": "are_fact:write_A19__field",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A19__field"
+      },
+      {
+        "name": "are_fact:write_A19__value",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A19__value"
+      },
+      {
+        "name": "are_fact:write_A2",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A2"
+      },
+      {
+        "name": "are_fact:write_A20",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A20"
+      },
+      {
+        "name": "are_fact:write_A22",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A22"
+      },
+      {
+        "name": "are_fact:write_A22__field",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A22__field"
+      },
+      {
+        "name": "are_fact:write_A22__value",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A22__value"
+      },
+      {
+        "name": "are_fact:write_A23",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A23"
+      },
+      {
+        "name": "are_fact:write_A24",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A24"
+      },
+      {
+        "name": "are_fact:write_A24__attendee_C28",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A24__attendee_C28"
+      },
+      {
+        "name": "are_fact:write_A24__attendee_C65",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A24__attendee_C65"
+      },
+      {
+        "name": "are_fact:write_A24__date",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A24__date"
+      },
+      {
+        "name": "are_fact:write_A24__duration_min",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A24__duration_min"
+      },
+      {
+        "name": "are_fact:write_A24__time",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A24__time"
+      },
+      {
+        "name": "are_fact:write_A25",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A25"
+      },
+      {
+        "name": "are_fact:write_A25__field",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A25__field"
+      },
+      {
+        "name": "are_fact:write_A25__value",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A25__value"
+      },
+      {
+        "name": "are_fact:write_A26",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A26"
+      },
+      {
+        "name": "are_fact:write_A27",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A27"
+      },
+      {
+        "name": "are_fact:write_A27__field",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A27__field"
+      },
+      {
+        "name": "are_fact:write_A27__value",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A27__value"
+      },
+      {
+        "name": "are_fact:write_A28",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A28"
+      },
+      {
+        "name": "are_fact:write_A3",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A3"
+      },
+      {
+        "name": "are_fact:write_A4",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A4"
+      },
+      {
+        "name": "are_fact:write_A4__field",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A4__field"
+      },
+      {
+        "name": "are_fact:write_A4__value",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A4__value"
+      },
+      {
+        "name": "are_fact:write_A5",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A5"
+      },
+      {
+        "name": "are_fact:write_A5__field",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A5__field"
+      },
+      {
+        "name": "are_fact:write_A5__value",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A5__value"
+      },
+      {
+        "name": "are_fact:write_A6",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A6"
+      },
+      {
+        "name": "are_fact:write_A6__field",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A6__field"
+      },
+      {
+        "name": "are_fact:write_A6__value",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A6__value"
+      },
+      {
+        "name": "are_fact:write_A7",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A7"
+      },
+      {
+        "name": "are_fact:write_A7__attendee_C02",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A7__attendee_C02"
+      },
+      {
+        "name": "are_fact:write_A7__date",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A7__date"
+      },
+      {
+        "name": "are_fact:write_A7__duration_min",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A7__duration_min"
+      },
+      {
+        "name": "are_fact:write_A7__time",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A7__time"
+      },
+      {
+        "name": "are_fact:write_A8",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A8"
+      },
+      {
+        "name": "are_fact:write_A8__attendee_C14",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A8__attendee_C14"
+      },
+      {
+        "name": "are_fact:write_A8__attendee_C18",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A8__attendee_C18"
+      },
+      {
+        "name": "are_fact:write_A8__date",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A8__date"
+      },
+      {
+        "name": "are_fact:write_A8__duration_min",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A8__duration_min"
+      },
+      {
+        "name": "are_fact:write_A8__time",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A8__time"
+      },
+      {
+        "name": "are_fact:write_A9",
+        "value": 1.0,
+        "raw": 1.0,
+        "weight": 1.0,
+        "description": "ARE compiled fact: write_A9"
+      }
+    ],
+    "kind": "programmatic"
+  }
+}
