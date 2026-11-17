@@ -1,0 +1,7 @@
+[
+  {"email_id": "S001", "date": "2026-03-14T08:20", "sender": "rosa.delgado", "recipient": "marcus.hale@birchwood.example", "folder": "sent", "subject": "Re: Thanks for coordinating", "body": "Happy to help, Marcus. I'll relay only confirmed updates and I'll keep each vendor authorization within the $500 cap you set. I'll flag anything that needs your sign-off."},
+  {"email_id": "S002", "date": "2026-03-14T08:25", "sender": "rosa.delgado", "recipient": "elena.voss@gmail.example", "folder": "sent", "subject": "Re: Opting out of contact sharing", "body": "Understood, Elena - I won't share your number or unit with anyone. Take care."},
+  {"email_id": "S003", "date": "2026-03-14T10:15", "sender": "rosa.delgado", "recipient": "chen.wei@gmail.example", "folder": "sent", "subject": "Generator check", "body": "Thanks for offering to take the 6 PM generator check, Chen - I'll put you down for it."},
+  {"email_id": "S004", "date": "2026-03-14T09:40", "sender": "rosa.delgado", "recipient": "sofia.russo@carebridge.example", "folder": "sent", "subject": "Re: Wellness-check volunteers available", "body": "Thank you - I'll confirm the resident and time shortly and get back to you."},
+  {"email_id": "S005", "date": "2026-03-14T08:30", "sender": "rosa.delgado", "recipient": "marcus.hale@birchwood.example", "folder": "sent", "subject": "Coordination log", "body": "Starting the coordination log now. I'll only post updates once you or the providers confirm them."}
+]

@@ -1,0 +1,22 @@
+[
+  {"event_id": "EV01", "date": "2026-03-14", "time": "21:00", "duration_min": 60, "organizer": "C01", "attendees": ["C01"], "title": "Power restoration (est.)"},
+  {"event_id": "EV02", "date": "2026-03-14", "time": "08:00", "duration_min": 60, "organizer": "rosa.delgado", "attendees": ["rosa.delgado"], "title": "Coordinator setup"},
+  {"event_id": "EV03", "date": "2026-03-14", "time": "11:00", "duration_min": 30, "organizer": "C05", "attendees": ["C05", "rosa.delgado"], "title": "Water truck (est.)"},
+  {"event_id": "EV04", "date": "2026-03-14", "time": "10:00", "duration_min": 30, "organizer": "C04", "attendees": ["C04"], "title": "Lobby check"},
+  {"event_id": "EV05", "date": "2026-03-14", "time": "16:00", "duration_min": 30, "organizer": "C04", "attendees": ["C04"], "title": "Lobby check"},
+  {"event_id": "EV06", "date": "2026-03-14", "time": "09:00", "duration_min": 30, "organizer": "rosa.delgado", "attendees": ["rosa.delgado", "C01"], "title": "Call with Marcus"},
+  {"event_id": "EV07", "date": "2026-03-14", "time": "12:00", "duration_min": 30, "organizer": "C42", "attendees": ["C42"], "title": "Donation table shift"},
+  {"event_id": "EV08", "date": "2026-03-14", "time": "13:00", "duration_min": 30, "organizer": "C25", "attendees": ["C25"], "title": "Supply sort"},
+  {"event_id": "EV09", "date": "2026-03-14", "time": "14:30", "duration_min": 30, "organizer": "C32", "attendees": ["C32"], "title": "Flashlight handout"},
+  {"event_id": "EV10", "date": "2026-03-14", "time": "17:00", "duration_min": 30, "organizer": "rosa.delgado", "attendees": ["rosa.delgado"], "title": "Status roundup"},
+  {"event_id": "EV11", "date": "2026-03-14", "time": "09:30", "duration_min": 30, "organizer": "C03", "attendees": ["C03", "rosa.delgado"], "title": "Sync with assistant manager"},
+  {"event_id": "EV12", "date": "2026-03-14", "time": "19:00", "duration_min": 60, "organizer": "C04", "attendees": ["C04"], "title": "Maintenance walkthrough"},
+  {"event_id": "EV13", "date": "2026-03-14", "time": "07:30", "duration_min": 30, "organizer": "rosa.delgado", "attendees": ["rosa.delgado"], "title": "Morning headcount"},
+  {"event_id": "EV14", "date": "2026-03-15", "time": "09:00", "duration_min": 60, "organizer": "rosa.delgado", "attendees": ["rosa.delgado"], "title": "Post-outage debrief"},
+  {"event_id": "EV15", "date": "2026-03-14", "time": "15:00", "duration_min": 30, "organizer": "C07", "attendees": ["C07"], "title": "CareBridge availability window"},
+  {"event_id": "EV16", "date": "2026-03-14", "time": "11:30", "duration_min": 30, "organizer": "C31", "attendees": ["C31"], "title": "Camp stove loan"},
+  {"event_id": "EV17", "date": "2026-03-14", "time": "12:30", "duration_min": 30, "organizer": "C29", "attendees": ["C29"], "title": "Bottled water share"},
+  {"event_id": "EV18", "date": "2026-03-14", "time": "18:30", "duration_min": 30, "organizer": "rosa.delgado", "attendees": ["rosa.delgado"], "title": "Evening check-in"},
+  {"event_id": "EV19", "date": "2026-03-14", "time": "20:00", "duration_min": 30, "organizer": "C04", "attendees": ["C04"], "title": "Generator refuel window"},
+  {"event_id": "EV20", "date": "2026-03-14", "time": "10:20", "duration_min": 20, "organizer": "rosa.delgado", "attendees": ["rosa.delgado", "C21"], "title": "Call Agnes back"}
+]
