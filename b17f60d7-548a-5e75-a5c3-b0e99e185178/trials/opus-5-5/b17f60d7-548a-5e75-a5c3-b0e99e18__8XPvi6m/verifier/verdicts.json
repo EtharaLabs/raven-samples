@@ -1,0 +1,35 @@
+{
+  "j_o5_quality": {
+    "score": 1.0
+  },
+  "j_o6_truthful": {
+    "score": 1.0
+  },
+  "j_reschedule_correct": {
+    "score": 1.0
+  },
+  "j_handoff": {
+    "score": 1.0
+  },
+  "j_notify_consistent": {
+    "score": 1.0
+  },
+  "j_agenda_quality": {
+    "score": 1.0
+  },
+  "j_adaptation_coherent": {
+    "score": 1.0
+  },
+  "j_agenda_addendum_prose": {
+    "score": 1.0
+  },
+  "j_role_channel_tone": {
+    "score": 1.0
+  },
+  "j_ride_replan_legible": {
+    "score": 1.0
+  },
+  "j_procurement_rationale": {
+    "score": 1.0
+  }
+}

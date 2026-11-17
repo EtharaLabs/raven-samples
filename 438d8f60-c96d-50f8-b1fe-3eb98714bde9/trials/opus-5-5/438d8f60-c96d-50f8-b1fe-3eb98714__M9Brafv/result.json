@@ -1,0 +1,153 @@
+{
+    "id": "e3f9a8f9-a2d0-49a7-bcdd-2d81da1e458e",
+    "task_name": "ethara/438d8f60-c96d-50f8-b1fe-3eb98714bde9",
+    "trial_name": "438d8f60-c96d-50f8-b1fe-3eb98714__M9Brafv",
+    "trial_uri": "file://jobs-par/438d8f60-c96d-50f8-b1fe-3eb98714bde9/2026-11-17__18-13-39/438d8f60-c96d-50f8-b1fe-3eb98714__M9Brafv",
+    "task_id": {
+        "path": "jobs-par/438d8f60-c96d-50f8-b1fe-3eb98714bde9/.raven-staged/438d8f60-c96d-50f8-b1fe-3eb98714bde9"
+    },
+    "source": null,
+    "task_checksum": "b3052e9ed196cbb4d2bb1406240aa9c6b60dd805edc7d30b2528d460ce8fd9c3",
+    "config": {
+        "task": {
+            "path": "jobs-par/438d8f60-c96d-50f8-b1fe-3eb98714bde9/.raven-staged/438d8f60-c96d-50f8-b1fe-3eb98714bde9",
+            "git_url": null,
+            "git_commit_id": null,
+            "name": null,
+            "ref": null,
+            "overwrite": false,
+            "download_dir": null,
+            "source": null
+        },
+        "trial_name": "438d8f60-c96d-50f8-b1fe-3eb98714__M9Brafv",
+        "trials_dir": "jobs-par/438d8f60-c96d-50f8-b1fe-3eb98714bde9/2026-11-17__18-13-39",
+        "install_only": false,
+        "timeout_multiplier": 1.0,
+        "agent_timeout_multiplier": null,
+        "verifier_timeout_multiplier": null,
+        "agent_setup_timeout_multiplier": null,
+        "environment_build_timeout_multiplier": null,
+        "agent": {
+            "name": "claude-code",
+            "import_path": null,
+            "model_name": "anthropic/claude-opus-5-5",
+            "base_url": null,
+            "model_api_key_name": null,
+            "model_api_format": null,
+            "skip_model_parsing": false,
+            "n_concurrent": null,
+            "concurrency_group": null,
+            "skills": [],
+            "override_timeout_sec": null,
+            "override_setup_timeout_sec": null,
+            "max_timeout_sec": null,
+            "resume_trajectory": false,
+            "load_trajectory": null,
+            "extra_allowed_hosts": [
+                "api.anthropic.com"
+            ],
+            "kwargs": {
+                "disable_web_search": true
+            },
+            "env": {
+                "CLAUDE_CODE_OAUTH_TOKEN": "${CLAUDE_CODE_OAUTH_TOKEN}",
+                "CLAUDE_FORCE_OAUTH": "****",
+                "DISABLE_TELEMETRY": "1",
+                "DISABLE_AUTOUPDATER": "1"
+            },
+            "mcp_servers": []
+        },
+        "user_agent": null,
+        "environment": {
+            "type": "docker",
+            "import_path": null,
+            "force_build": false,
+            "delete": true,
+            "stream": false,
+            "cpu_enforcement_policy": "auto",
+            "memory_enforcement_policy": "auto",
+            "override_cpus": null,
+            "override_memory_mb": null,
+            "override_storage_mb": null,
+            "override_gpus": null,
+            "override_tpu": null,
+            "mounts": null,
+            "extra_docker_compose": [],
+            "kwargs": {},
+            "extra_allowed_hosts": []
+        },
+        "verifier": {
+            "override_timeout_sec": null,
+            "max_timeout_sec": null,
+            "env": {
+                "CLAUDE_CODE_OAUTH_TOKEN": "${CLAUDE_CODE_OAUTH_TOKEN}",
+                "CLAUDE_FORCE_OAUTH": "****",
+                "RAVEN_JUDGE_LIVE": "1",
+                "RAVEN_JUDGE_USE_CLI": "1",
+                "RAVEN_JUDGE_MODEL": "${RAVEN_JUDGE_MODEL:-claude-opus-5-5}",
+                "OPENAI_API_KEY": "${OPENAI_API_KEY:-}",
+                "OPENAI_BASE_URL": "${OPENAI_BASE_URL:-}",
+                "CODEX_ACCESS_TOKEN": "${CODEX_ACCESS_TOKEN:-}"
+            },
+            "disable": false,
+            "extra_allowed_hosts": [
+                "localhost"
+            ]
+        },
+        "artifacts": [],
+        "extra_instruction_paths": [],
+        "extra_instructions": [],
+        "job_id": "93d23df6-b620-49d9-9891-8bdf17116200",
+        "source_trial": null
+    },
+    "agent_info": {
+        "name": "claude-code",
+        "version": "2.1.326",
+        "model_info": {
+            "name": "claude-opus-5-5",
+            "provider": "anthropic"
+        }
+    },
+    "agent_result": {
+        "n_input_tokens": 1421829,
+        "n_cache_tokens": 1371513,
+        "n_output_tokens": 8472,
+        "cost_usd": 0.8460546000000002,
+        "model_usage": {
+            "claude-opus-5-5": {
+                "n_input_tokens": 1421829,
+                "n_cache_tokens": 1371513,
+                "n_output_tokens": 8472,
+                "cost_usd": 0.6952686
+            }
+        },
+        "rollout_details": null,
+        "metadata": null
+    },
+    "verifier_result": {
+        "rewards": {
+            "reward": 0.49010101010101015
+        }
+    },
+    "verifier_environment_mode": "separate",
+    "exception_info": null,
+    "started_at": "2026-11-17T12:43:41.508154Z",
+    "finished_at": "2026-11-17T12:47:28.528586Z",
+    "environment_setup": {
+        "started_at": "2026-11-17T12:43:41.542544Z",
+        "finished_at": "2026-11-17T12:43:55.078245Z"
+    },
+    "agent_setup": {
+        "started_at": "2026-11-17T12:43:55.078549Z",
+        "finished_at": "2026-11-17T12:43:56.165630Z"
+    },
+    "agent_execution": {
+        "started_at": "2026-11-17T12:43:56.166333Z",
+        "finished_at": "2026-11-17T12:46:39.811171Z"
+    },
+    "verifier": {
+        "started_at": "2026-11-17T12:46:51.722905Z",
+        "finished_at": "2026-11-17T12:47:28.528480Z"
+    },
+    "step_results": null
+}

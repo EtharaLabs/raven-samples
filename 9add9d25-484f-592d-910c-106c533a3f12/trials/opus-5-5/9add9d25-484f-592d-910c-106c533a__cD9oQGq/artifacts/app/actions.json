@@ -1,0 +1,237 @@
+[
+  {
+    "tool": "delete_email",
+    "args": {
+      "email_id": "E017"
+    }
+  },
+  {
+    "tool": "delete_email",
+    "args": {
+      "email_id": "E018"
+    }
+  },
+  {
+    "tool": "delete_email",
+    "args": {
+      "email_id": "E028"
+    }
+  },
+  {
+    "tool": "delete_email",
+    "args": {
+      "email_id": "E027"
+    }
+  },
+  {
+    "tool": "delete_email",
+    "args": {
+      "email_id": "E013"
+    }
+  },
+  {
+    "tool": "update_contact",
+    "args": {
+      "contact_id": "C24",
+      "field": "job",
+      "value": "Principal Engineer"
+    }
+  },
+  {
+    "tool": "update_contact",
+    "args": {
+      "contact_id": "C16",
+      "field": "job",
+      "value": "Talent Lead"
+    }
+  },
+  {
+    "tool": "update_contact",
+    "args": {
+      "contact_id": "C65",
+      "field": "job",
+      "value": "Head of Customer Success"
+    }
+  },
+  {
+    "tool": "update_contact",
+    "args": {
+      "contact_id": "C66",
+      "field": "job",
+      "value": "Head of Partnerships"
+    }
+  },
+  {
+    "tool": "update_contact",
+    "args": {
+      "contact_id": "C67",
+      "field": "job",
+      "value": "Head of Security"
+    }
+  },
+  {
+    "tool": "update_contact",
+    "args": {
+      "contact_id": "C08",
+      "field": "job",
+      "value": "Senior Data Scientist"
+    }
+  },
+  {
+    "tool": "update_contact",
+    "args": {
+      "contact_id": "C61",
+      "field": "job",
+      "value": "Workplace Experience Lead"
+    }
+  },
+  {
+    "tool": "update_contact",
+    "args": {
+      "contact_id": "C03",
+      "field": "city",
+      "value": "Bengaluru"
+    }
+  },
+  {
+    "tool": "add_calendar_event",
+    "args": {
+      "title": "Design sync",
+      "date": "2024-08-15",
+      "time": "15:00",
+      "duration_min": 30,
+      "attendees": [
+        "C02"
+      ]
+    }
+  },
+  {
+    "tool": "add_calendar_event",
+    "args": {
+      "title": "Budget review",
+      "date": "2024-08-14",
+      "time": "11:00",
+      "duration_min": 45,
+      "attendees": [
+        "C18",
+        "C14"
+      ]
+    }
+  },
+  {
+    "tool": "add_calendar_event",
+    "args": {
+      "title": "Vendor transition review",
+      "date": "2024-08-20",
+      "time": "14:00",
+      "duration_min": 60,
+      "attendees": [
+        "C11",
+        "C28"
+      ]
+    }
+  },
+  {
+    "tool": "send_chat_message",
+    "args": {
+      "chat_id": "CH3",
+      "text": "Heads up: the design review has moved to Friday."
+    }
+  },
+  {
+    "tool": "send_chat_message",
+    "args": {
+      "chat_id": "CH9",
+      "text": "Confirming the component library review is on for Thursday."
+    }
+  },
+  {
+    "tool": "send_chat_message",
+    "args": {
+      "chat_id": "CH10",
+      "text": "Release 2.4 is good to ship. Thanks for the regression pass!"
+    }
+  },
+  {
+    "tool": "send_chat_message",
+    "args": {
+      "chat_id": "CH14",
+      "text": "Quick update: the ledger service is stable again."
+    }
+  },
+  {
+    "tool": "send_chat_message",
+    "args": {
+      "chat_id": "CH19",
+      "text": "The compliance audit is cleared to start."
+    }
+  },
+  {
+    "tool": "reply_email",
+    "args": {
+      "email_id": "E005",
+      "body": "Thanks Tara, please go ahead and schedule the onsite panel."
+    }
+  },
+  {
+    "tool": "reply_email",
+    "args": {
+      "email_id": "E009",
+      "body": "Thanks Nikhil, I'll get the deck to the intros this week."
+    }
+  },
+  {
+    "tool": "reply_email",
+    "args": {
+      "email_id": "E061",
+      "body": "Thanks Aisha, the deck is ready."
+    }
+  },
+  {
+    "tool": "reply_email",
+    "args": {
+      "email_id": "E066",
+      "body": "Thanks Mohit, we're cleared to publish the report."
+    }
+  },
+  {
+    "tool": "reply_email",
+    "args": {
+      "email_id": "E068",
+      "body": "Thanks Divya, the onboarding plan is approved to roll out. I'll set up the CS kickoff."
+    }
+  },
+  {
+    "tool": "add_calendar_event",
+    "args": {
+      "title": "CS kickoff",
+      "date": "2024-08-23",
+      "time": "15:00",
+      "duration_min": 45,
+      "attendees": [
+        "C65",
+        "C28"
+      ]
+    }
+  },
+  {
+    "tool": "reply_email",
+    "args": {
+      "email_id": "E070",
+      "body": "Thanks Rohan, go ahead with the FinBridge pilot."
+    }
+  },
+  {
+    "tool": "reply_email",
+    "args": {
+      "email_id": "E064",
+      "body": "Thanks Vivek, the audit passed."
+    }
+  },
+  {
+    "tool": "send_message_to_user",
+    "args": {
+      "content": "Done with the clear items. What I did:\n- Deleted DataForge threads (E017, E018, E028), the team offsite receipt (E027) and Sameer's press query (E013).\n- Titles updated: Karthik Iyer -> Principal Engineer, Tara Menon -> Talent Lead, Divya Menon -> Head of Customer Success, Rohan Kulkarni -> Head of Partnerships, Nidhi Kapoor -> Head of Security, Ananya Iyer -> Senior Data Scientist, Thomas George -> Workplace Experience Lead. Kavya Nair's city changed to Bengaluru.\n- Calendar: Design sync (Aug 15, 3 PM, Arjun Rao), Budget review (Aug 14, 11 AM, Harish Gupta + Lata Pillai), Vendor transition review (Aug 20, 2 PM, Imran Sheikh + Priya Menon), CS kickoff (Aug 23, 3 PM, 45 min, Divya Menon + Priya Menon, as Divya's plan asked).\n- Chats: product pod (design review moved to Friday), Design Guild (component library review on for Thursday), Rhea (2.4 good to ship), Manish Rao (ledger service stable; he's covering the backend pager while Pooja travels), Nidhi (audit cleared to start).\n- Replies: Tara (schedule the onsite panel), Nikhil (deck to intros this week), Aisha (she organizes the Q3 board meeting; deck is ready), Mohit (cleared to publish the pen-test report), Divya (onboarding plan approved), Rohan Kulkarni (go ahead with the pilot), Vivek Nair (interim payments PM; audit passed).\n\nWhat I couldn't do, and why:\n1. CloudSpan \"duplicate\" invoice: E003 and E043 have the same subject and date but different totals (INR 4,20,000 vs 2,60,000), so they aren't copies. I didn't delete either. Which one is wrong?\n2. Vendor renewal reply: no vendor email is about renewing. The only renewal thread is Northwind's \"Not renewing: closing out our contract\" (E042), and DataForge is offboarded. Which vendor do you mean?\n3. Priya / Q3 budget: no Priya sent a Q3 budget email. The Q3 budget variance review is from Harish (E030), and Priya Menon sent Q4 budget planning (E029). Who should get the reply?\n4. Platform lead (Arjun Menon) title: two org-chart emails from the same day disagree. Rahul's says Director, Platform and Sneha's (HR) says Principal Platform Engineer. Which is right?\n5. Quarterly review \"next Tuesday\": no time, length or attendees given, and \"next Tuesday\" doesn't map to a clear date in your calendar (it's all August 2024).\n6. Moving sprint planning to the afternoon: you have two sprint plannings (Aug 1 and Aug 15), and I can only add events, not move them.\n7. Weekly planning: the \"usual time\" disagrees (Anjali says 4 PM, Arjun Menon says 3 PM), and there's no date.\n8. Investor call: both Vivek Menon (Northstar) and Aditi Rao (Elevation) sent term sheets, and there's no date or time.\n9. Startup catch-up group: two group chats are both called \"Catch-up and Startup Updates\" (Varun + Ishita, and Nikhil + Sara). Which one?\n10. Landlord: George's latest email (E058) says he's ending the lease because he's selling the building, so I didn't confirm a renewal.\n11. Sara's founder roundtable: she has since cancelled it (E059) and will reschedule, so I didn't RSVP.\n12. Product designer: both Ishan Gupta (design system proposal, E036) and Simran Kaur (portfolio feedback, E024) are product designers who sent work. Which one?"
+    }
+  }
+]

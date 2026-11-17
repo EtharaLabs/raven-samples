@@ -1,0 +1,40 @@
+{
+    "task": {
+        "path": "jobs-ar7final/832c4f92-1f69-562a-9c84-f80e797bc46b/.raven-staged/832c4f92-1f69-562a-9c84-f80e797bc46b"
+    },
+    "trial_name": "832c4f92-1f69-562a-9c84-f80e797b__DZw78zu",
+    "trials_dir": "jobs-ar7final/832c4f92-1f69-562a-9c84-f80e797bc46b/2026-11-17__18-53-16",
+    "verifier_timeout_multiplier": 3.0,
+    "agent": {
+        "name": "claude-code",
+        "model_name": "anthropic/claude-opus-5-5",
+        "extra_allowed_hosts": [
+            "api.anthropic.com"
+        ],
+        "kwargs": {
+            "disable_web_search": true
+        },
+        "env": {
+            "CLAUDE_CODE_OAUTH_TOKEN": "${CLAUDE_CODE_OAUTH_TOKEN}",
+            "CLAUDE_FORCE_OAUTH": "****",
+            "DISABLE_TELEMETRY": "1",
+            "DISABLE_AUTOUPDATER": "1"
+        }
+    },
+    "verifier": {
+        "env": {
+            "CLAUDE_CODE_OAUTH_TOKEN": "${CLAUDE_CODE_OAUTH_TOKEN}",
+            "CLAUDE_FORCE_OAUTH": "****",
+            "RAVEN_JUDGE_LIVE": "1",
+            "RAVEN_JUDGE_USE_CLI": "1",
+            "RAVEN_JUDGE_MODEL": "${RAVEN_JUDGE_MODEL:-claude-opus-5-5}",
+            "OPENAI_API_KEY": "${OPENAI_API_KEY:-}",
+            "OPENAI_BASE_URL": "${OPENAI_BASE_URL:-}",
+            "CODEX_ACCESS_TOKEN": "${CODEX_ACCESS_TOKEN:-}"
+        },
+        "extra_allowed_hosts": [
+            "localhost"
+        ]
+    },
+    "job_id": "85d81017-15fe-40a5-9e30-21de6079e95e"
+}

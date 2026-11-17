@@ -1,0 +1,92 @@
+{
+    "schema_version": 3,
+    "created_at": "2026-11-17T13:40:41.079739Z",
+    "harbor": {
+        "version": "0.25.0",
+        "is_editable": false
+    },
+    "n_concurrent_trials": 4,
+    "retry": {
+        "max_retries": 0,
+        "exclude_exceptions": [
+            "AgentSafetyRefusalError",
+            "VerifierOutputParseError",
+            "ApiUsageLimitError",
+            "VerifierTimeoutError",
+            "RewardFileEmptyError",
+            "ModelNotFoundError",
+            "RewardFileNotFoundError",
+            "AgentAuthenticationError",
+            "AgentTimeoutError",
+            "UnsupportedModelParametersError"
+        ],
+        "wait_multiplier": 1.0,
+        "min_wait_sec": 1.0,
+        "max_wait_sec": 60.0
+    },
+    "trials": [
+        {
+            "schema_version": 2,
+            "task": {
+                "name": "8afa7574-b51b-5926-ad9c-8d443f4c2919",
+                "version": "1.0.0",
+                "type": "local",
+                "digest": "sha256:48a9f3f163c1555864f166a4b1fb5907a0e2916b5bb4624636b2d03d75d55991",
+                "path": "jobs-8afa/.raven-staged/8afa7574-b51b-5926-ad9c-8d443f4c2919"
+            },
+            "install_only": false,
+            "timeout_multiplier": 1.0,
+            "verifier_timeout_multiplier": 3.0,
+            "agent": {
+                "name": "claude-code",
+                "model_name": "anthropic/claude-opus-5-5",
+                "skip_model_parsing": false,
+                "skills": [],
+                "resume_trajectory": false,
+                "extra_allowed_hosts": [
+                    "api.anthropic.com"
+                ],
+                "kwargs": {
+                    "disable_web_search": true
+                },
+                "env": {
+                    "CLAUDE_CODE_OAUTH_TOKEN": "${CLAUDE_CODE_OAUTH_TOKEN}",
+                    "CLAUDE_FORCE_OAUTH": "****",
+                    "DISABLE_TELEMETRY": "1",
+                    "DISABLE_AUTOUPDATER": "1"
+                },
+                "mcp_servers": []
+            },
+            "bridge_inputs": {},
+            "skills": [],
+            "environment": {
+                "type": "docker",
+                "force_build": false,
+                "delete": true,
+                "stream": false,
+                "cpu_enforcement_policy": "auto",
+                "memory_enforcement_policy": "auto",
+                "extra_docker_compose": [],
+                "kwargs": {},
+                "extra_allowed_hosts": []
+            },
+            "verifier": {
+                "env": {
+                    "CLAUDE_CODE_OAUTH_TOKEN": "${CLAUDE_CODE_OAUTH_TOKEN}",
+                    "CLAUDE_FORCE_OAUTH": "****",
+                    "RAVEN_JUDGE_LIVE": "1",
+                    "RAVEN_JUDGE_USE_CLI": "1",
+                    "RAVEN_JUDGE_MODEL": "${RAVEN_JUDGE_MODEL:-claude-opus-5-5}",
+                    "OPENAI_API_KEY": "${OPENAI_API_KEY:-}",
+                    "OPENAI_BASE_URL": "${OPENAI_BASE_URL:-}",
+                    "CODEX_ACCESS_TOKEN": "${CODEX_ACCESS_TOKEN:-}"
+                },
+                "disable": false,
+                "extra_allowed_hosts": [
+                    "localhost"
+                ],
+                "environment_mode": "separate"
+            }
+        }
+    ]
+}

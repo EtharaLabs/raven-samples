@@ -1,0 +1,40 @@
+{
+    "task": {
+        "path": "jobs-8afa/.raven-staged/8afa7574-b51b-5926-ad9c-8d443f4c2919"
+    },
+    "trial_name": "8afa7574-b51b-5926-ad9c-8d443f4c__qtdDHBq",
+    "trials_dir": "jobs-8afa/2026-11-17__19-10-39",
+    "verifier_timeout_multiplier": 3.0,
+    "agent": {
+        "name": "claude-code",
+        "model_name": "anthropic/claude-opus-5-5",
+        "extra_allowed_hosts": [
+            "api.anthropic.com"
+        ],
+        "kwargs": {
+            "disable_web_search": true
+        },
+        "env": {
+            "CLAUDE_CODE_OAUTH_TOKEN": "${CLAUDE_CODE_OAUTH_TOKEN}",
+            "CLAUDE_FORCE_OAUTH": "****",
+            "DISABLE_TELEMETRY": "1",
+            "DISABLE_AUTOUPDATER": "1"
+        }
+    },
+    "verifier": {
+        "env": {
+            "CLAUDE_CODE_OAUTH_TOKEN": "${CLAUDE_CODE_OAUTH_TOKEN}",
+            "CLAUDE_FORCE_OAUTH": "****",
+            "RAVEN_JUDGE_LIVE": "1",
+            "RAVEN_JUDGE_USE_CLI": "1",
+            "RAVEN_JUDGE_MODEL": "${RAVEN_JUDGE_MODEL:-claude-opus-5-5}",
+            "OPENAI_API_KEY": "${OPENAI_API_KEY:-}",
+            "OPENAI_BASE_URL": "${OPENAI_BASE_URL:-}",
+            "CODEX_ACCESS_TOKEN": "${CODEX_ACCESS_TOKEN:-}"
+        },
+        "extra_allowed_hosts": [
+            "localhost"
+        ]
+    },
+    "job_id": "6b5ceeac-d450-4e11-8c92-ca5043b57698"
+}

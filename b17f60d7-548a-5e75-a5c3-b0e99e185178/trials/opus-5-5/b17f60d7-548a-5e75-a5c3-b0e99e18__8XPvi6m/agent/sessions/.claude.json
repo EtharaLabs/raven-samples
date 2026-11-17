@@ -1,0 +1,34 @@
+{
+  "mcpServers": {
+    "raven-ar9": {
+      "type": "http",
+      "url": "http://oracle:8000/mcp"
+    }
+  },
+  "firstStartTime": "2026-11-17T12:43:56.137Z",
+  "firstStartVersion": "2.1.326",
+  "machineID": "bdfc820722bd418f715fb728fa13825cfbb967c6cde38d59febb6e80d37492f4",
+  "opusProMigrationComplete": true,
+  "seenNotifications": {},
+  "hasResetAutoModeOptInForDefaultOffer": true,
+  "migrationVersion": 15,
+  "userID": "6359e25a566a9dd42edb56efe71dc4d5f85fd825c79fbe00d26e6cf56215a4aa",
+  "pluginUsage": {
+    "cc-plugin-agents-md@builtin": {
+      "usageCount": 0,
+      "lastUsedAt": 1794919436882,
+      "lastUsedNumStartups": 0
+    },
+    "cc-plugin-privacy@builtin": {
+      "usageCount": 0,
+      "lastUsedAt": 1794919436882,
+      "lastUsedNumStartups": 0
+    },
+    "cc-plugin-plugin-authoring@builtin": {
+      "usageCount": 0,
+      "lastUsedAt": 1794919436882,
+      "lastUsedNumStartups": 0
+    }
+  },
+  "cachedExtraUsageDisabledReason": "org_level_disabled"
+}
