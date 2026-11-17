@@ -1,0 +1,29 @@
+{
+  "denom": 99,
+  "inapplicable_when_prereq_failed": true,
+  "judgments": {
+    "j_route_rationale": "trinity.judgment/j_route_rationale",
+    "j_client_tone": "trinity.judgment/j_client_tone",
+    "j_confirm_truthful": "trinity.judgment/j_confirm_truthful"
+  },
+  "live_calls_enabled": true,
+  "live_gate": "S5-live is gated for this transit-recovery bundle: the judged layer is driven from recorded or stub verdicts and the runner refuses to dial a model.",
+  "missing_or_invalid_when_applicable": "harness_failure",
+  "model": "openai/gpt-6.1-sol",
+  "prerequisites": {
+    "j_route_rationale": "r1_route_booked",
+    "j_client_tone": "n1_client_notified",
+    "j_confirm_truthful": "cc_confirm_sent"
+  },
+  "reducer": "penalty = sum over APPLICABLE judged of weight*(1-score)/DENOM; judged can only lower C, never raise it above the deterministic ceiling.",
+  "role": "subtractive_penalty_capacity",
+  "schemaVersion": "trinity.judge-packet/v1",
+  "score_range": [
+    0.0,
+    1.0
+  ],
+  "seeds": {
+    "trial-1": "transit-recovery-seed-1"
+  },
+  "temperature": 0
+}

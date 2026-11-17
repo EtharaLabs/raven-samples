@@ -1,0 +1,20 @@
+schema: trinity.bundle-provenance/v1
+origin: original
+no_upstream_lift: true
+provenance_date: "2026-11-12"
+source:
+  source_kind: synthetic
+  generator_identity: "net-new AR9 transit-disruption-recovery scenario; only the raven_ar9 engine (clock, mcp_surface, server, collect, __init__) is reused, the scenario layer, grader, universe and oracle are original"
+  generation_inputs:
+    - ./touchstones/
+recompute:
+  tool: ./solution/solve.sh
+  ground_truth: ./tests/score.py
+# PENDING_MINT: this binding block is a placeholder. The genuine ARE canary+journal mint
+# recomputes canonical_content_hash over the final bundle bytes (this file's non-binding
+# lines included, the binding block excluded per #415), writes the real digest here, stamps
+# the FORGE-CANARY-SLOT values across the carrier files, renames the draft directory to
+# uuid5(FORGE_TASK_NAMESPACE, hash), and signs solution/provenance.sig. Until that mint runs
+# the canonical_bundle_hash below is NOT derived and the bundle is HOLD:PILOT_REQUIRED.
+binding:
+  canonical_bundle_hash: PENDING_MINT

@@ -1,0 +1,104 @@
+schema_version = "1.4"
+# Bounded continuous reward: tests/score.py emits R = max(0, C_ceiling - semantic_penalty
+# - 0.20*F), always in [0,1]. Declared so static QC does not default it to binary; the QC
+# run and the shipping dataset must use evaluation type "bounded_continuous" to match.
+reward_type = "bounded_continuous"
+
+[task]
+name = "ethara/438d8f60-c96d-50f8-b1fe-3eb98714bde9"
+version = "0.1.0"
+description = "A native 12-app ARE estate task under a live wall-clock deadline: a mid-trip traveller's first flight is delayed and the onward connection is missed; the airline offers rebooking options mid-episode, the hotel check-in window and a client meeting both have cutoffs, and a spend cap and an approval line bound the choice. The operator must rebook the one feasible, in-budget, self-authorized route, schedule the airport transfer for the new arrival, hold the hotel room, notify the client, and confirm to the user before the deadline, while abstaining where a request is withdrawn, ambiguous, or dateless and never leaking confidential documents."
+keywords = ["temporal-deadline-compliance", "agentic", "underspecified-intent", "authorization", "abstention", "are", "gaia2"]
+authors = [{ name = "mansa.gupta", email = "mansa.gupta@ethara.ai" }]
+
+[metadata]
+null_floor = 0.05
+discrimination_weight = 0.8
+platforms = ["linux/amd64", "linux/arm64"]
+
+[verifier]
+timeout_sec = 600
+# The verifier runs in its own environment built from tests/Dockerfile, with no compose file.
+# Its only egress is the judge model endpoint. host.docker.internal lets a local QC run point
+# the judge at a host bridge through OPENAI_BASE_URL; it does not resolve elsewhere.
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "chatgpt.com", "auth.openai.com", "host.docker.internal"]
+environment_mode = "separate"
+
+[verifier.environment]
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "chatgpt.com", "auth.openai.com", "host.docker.internal"]
+env_passthrough = ["OPENAI_API_KEY", "OPENAI_BASE_URL", "RAVEN_JUDGE_LIVE", "RAVEN_JUDGE_MODEL"]
+
+# Defect 6: score.py resolves <workspace>/eventlog.json and <workspace>/appstate.json; Harbor
+# re-materializes each artifact at its ORIGINAL `source` path, so workspace == artifact source dir.
+[verifier.environment.env]
+RAVEN_VERIFIER_WORKSPACE = "/authority"
+# The in-flow judge's runtime config (RAVEN_JUDGE_LIVE/MODEL) and the judge credential
+# OPENAI_API_KEY is NOT set here. They are injected at launch by the harness as
+# --verifier-env KEY=${VAR} templates (see raven/agent_presets.py _claude_code_preset), so the
+# secret is resolved from the launch environment and never written into this file or the job config.
+
+# Defect 5 (section-name bug): Harbor's TaskConfig.artifacts is a TOP-LEVEL field, so
+# [[task.artifacts]] silently parsed to cfg.artifacts == [] and the oracle artifacts were
+# never collected. These MUST be top-level [[artifacts]].
+# Defect 6: source == RAVEN_VERIFIER_WORKSPACE/<name>, and <name> is exactly what
+# score.py resolves (eventlog.json / appstate.json). service=oracle; absolute source; unique dests.
+[[artifacts]]
+service = "oracle"
+source = "/authority/eventlog.json"
+destination = "eventlog.json"
+
+[[artifacts]]
+service = "oracle"
+source = "/authority/appstate.json"
+destination = "appstate.json"
+
+[agent]
+timeout_sec = 1800
+# Agent egress is provided by the bundle's own egress-proxy (environment/docker-compose.yaml:
+# HTTPS_PROXY=egress-proxy:3128), not by Harbor's egress sidecar: main declares networks
+# [oracle_net, proxy_net], so Harbor leaves its networking alone. network_mode matches
+# [environment]; the proxy allowlist is the agent's only route off the gatewayless nets.
+# allowed_hosts MUST be absent under no-network.
+network_mode = "no-network"
+# FORGE finding (launch gate 4): Harbor's OpenHands agent builds `chown {user}`
+# (openhands.py:900), so a "uid:gid" value emits an invalid `chown 10001:10001:10001:10001`
+# (exit 1). A BARE uid keeps chown valid; the agent image still maps uid 10001 to gid 10001.
+user = "10001"
+env_passthrough = ["RAVEN_MCP_TOKEN"]
+
+[environment]
+# The reconcile anchor: [agent] above now also declares no-network so the two AGREE (Smoldata rule-6).
+# The agent's and oracle's real isolation is the authored compose topology (environment/docker-compose
+# .yaml) — gatewayless internal nets plus the agent-only CONNECT egress-proxy — not a Harbor-provided
+# network, so no-network is the honest declaration for this runtime and the agent alike.
+network_mode = "no-network"
+build_timeout_sec = 1800
+cpus = 2
+memory_mb = 4096
+storage_mb = 8192
+gpus = 0
+
+[[environment.mcp_servers]]
+name = "raven-ar9"
+transport = "streamable-http"
+url = "http://oracle:8000/mcp"
+
+# FORGE finding (launch gate 3): the headers block locked the task to agents with
+# capabilities.mcp_http_headers=True (Harbor trial.py:1780-1799 blocks any agent lacking
+# it when the MCP server declares headers), excluding OpenHands/GPT. The oracle server.py
+# never reads/verifies RAVEN_MCP_TOKEN, so the header was a functional no-op. DROPPED so the
+# task is agent-agnostic; the [[environment.mcp_servers]] entry above is otherwise unchanged.
+# [environment.mcp_servers.headers]
+# Authorization = "Bearer ${RAVEN_MCP_TOKEN}"
+
+[upstream_provenance]
+origin = "original"
+predecessor_relation = "none"
+provenance_date = "2026-11-12"
+source_kind = "synthetic"
+
+[upstream_provenance.source]
+generator = "net-new AR9 transit-disruption-recovery scenario; only the raven_ar9 engine (clock, mcp_surface, server, collect) is reused, the scenario layer, grader, universe and oracle are original"
+generation_inputs = ["./touchstones/"]

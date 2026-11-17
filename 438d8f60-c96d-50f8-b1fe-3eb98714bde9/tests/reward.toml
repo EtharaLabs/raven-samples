@@ -1,0 +1,38 @@
+# Author-maintained for this ARE bundle; tests/score.py is the reward authority. No generator ships.
+# FORGE-CANARY-BEGIN
+# FORGE-CANARY-SLOT-1: db8462b7151829d7a5f930652f25bdc86d1d67fabee7b510fdc3a3f41cb8cf72
+# FORGE-CANARY-END
+#
+# tests/test_output.py registers the 23 COMPILED criteria with their grounding weights, so
+# rewardkit's weighted-mean over them is exactly C_ceiling = det_earned / 99. DENOM is
+# constant across the oracle, a no-op and every control, which is what stops a no-op from
+# raising its score by shrinking its denominator.
+#
+# The BOUND reward is computed by tests/score.py, which is the authority:
+#     C = C_ceiling - semantic_penalty          (the judged layer is subtractive only)
+#     R = max(0, C * (1 - 0.20) ** F)           (faults discount C geometrically; F in [0,4])
+# tests/test.sh writes that full result to /logs/verifier/score.json beside rewardkit's reward.json,
+# including F, full_success, and any harness failure.
+
+[[reward]]
+name = "reward"
+aggregation = "weighted-mean"
+
+[scoring.test_output]
+aggregation = "weighted-mean"
+
+# The pinned rewardkit validates reward.toml with extra='forbid', so the bound-reward algebra
+# is RECORDED AS COMMENTS: tests/score.py is the declared authority that computes C/F/R, while
+# rewardkit only folds the compiled criteria into the weighted-mean cross-check (reward.json).
+#   bound.scorer = 'tests/score.py'
+#   bound.output = '/logs/verifier/score.json'
+#   bound.denominator = 'compiled_weight_only'
+#   bound.denom = 99
+#   bound.judged_role = 'subtractive_penalty_capacity'
+#   bound.ceiling = 'det_earned_over_denom'
+#   bound.fault_weight = 0.20
+#   bound.fault_conditions = ['F_overspend', 'F_stale', 'F_wrong_route', 'F_disclosure']
+#   bound.full_success_rule = 'det_earned==DENOM and semantic_penalty==0 and F==0'
+#   bound.full_success_reported_separately_from_reward = true
+#   bound.option_c = 'a late timing-bound obligation (r1_route_booked, m1_meeting_booked, t1_transfer_booked, t3_transfer_time, h1_hotel_held, n1_client_notified, t_before_cutoff) loses its completion credit in C; a disclosure/overspend/stale/wrong-route violation ALSO increments its fault once (deliberate documented double-count)'
+#   bound.harness_failure_exit_code = 3

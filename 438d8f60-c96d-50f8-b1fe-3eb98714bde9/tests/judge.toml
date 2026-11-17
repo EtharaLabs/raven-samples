@@ -1,0 +1,82 @@
+# Author-maintained for this ARE bundle; tests/score.py is the reward authority. No generator ships.
+# FORGE-CANARY-BEGIN
+# FORGE-CANARY-SLOT-1: 9702f5f1d90eab3ff93c565198fd7d9d61fb398ef2ffd3a2ec13d0ddeb2526ca
+# FORGE-CANARY-END
+#
+# The judged layer is subtractive capacity ONLY. Each criterion returns a continuous score
+# in [0,1]; tests/judge/reducer.py folds them as
+#     penalty = sum over APPLICABLE judged of weight*(1-score)/DENOM,   DENOM = 99
+# and tests/score.py subtracts that penalty from the deterministic ceiling, so a judged
+# criterion can only LOWER the reward and can never raise it above det_earned/DENOM.
+#
+# A criterion is APPLICABLE only when its deterministic prerequisite passed. A prerequisite
+# failure makes it INAPPLICABLE and no verdict is owed. For an APPLICABLE criterion a
+# missing, malformed, out-of-range, non-finite or boolean verdict is a HARNESS FAILURE,
+# never a default and never a pass.
+#
+# Live model calls are ON: tests/judge/packet.json sets live_calls_enabled=true and
+# tests/judge/runner.py refuses to dial a model. These tables are namespaced under
+# judged_meta/judged_item so the pinned rewardkit never treats them as a JudgeTomlConfig.
+[judged_meta]
+role = 'subtractive_penalty_capacity'
+scale = "continuous"
+score_range = [0.0, 1.0]
+denominator = 99
+reducer = "tests/judge/reducer.py"
+runner = "tests/judge/runner.py"
+prompt = "tests/judge/prompt.md"
+packet = "tests/judge/packet.json"
+live_calls_enabled = true
+default_score = 'none'
+missing_or_invalid_when_applicable = 'harness_failure'
+inapplicable_when_prereq_failed = true
+require_finite = true
+require_unique_ids = true
+
+[[judged_item]]
+id = 'j_route_rationale'
+description = 'The confirmation explains why the chosen route was taken over the cheaper and premium options. Judge only: is the rebooking rationale coherent and consistent with the booked route?'
+type = "continuous"
+weight = 1
+negate = false
+prerequisite = 'r1_route_booked'
+[judged_item.annotations]
+mode = "judged"
+role = "subtractive"
+type = 'semantic'
+obligation = 'R_rebook'
+dimension = 'craft'
+evidence = 'AUI confirmation and agent sends vs the route catalogue'
+residue = 'rationale quality irreducible; route feasibility already deterministic (r2_route_feasible)'
+
+[[judged_item]]
+id = 'j_client_tone'
+description = 'The client notification is professional and accurate. Judge only: does the message read as a courteous, non-contradictory update to the client about the arrival?'
+type = "continuous"
+weight = 1
+negate = false
+prerequisite = 'n1_client_notified'
+[judged_item.annotations]
+mode = "judged"
+role = "subtractive"
+type = 'semantic'
+obligation = 'N_notify'
+dimension = 'process'
+evidence = 'client-facing message content'
+residue = 'register and tone irreducible; arrival value already deterministic (n2_notify_consistent)'
+
+[[judged_item]]
+id = 'j_confirm_truthful'
+description = 'The confirmation prose is not misleading. Judge only: do the confirmation claims match the actual end-state (structured backing already deterministic)?'
+type = "continuous"
+weight = 1
+negate = false
+prerequisite = 'cc_confirm_sent'
+[judged_item.annotations]
+mode = "judged"
+role = "subtractive"
+type = 'semantic'
+obligation = 'C_confirm'
+dimension = 'craft'
+evidence = 'AUI text vs final state'
+residue = 'truthfulness of free prose irreducible; reported fields already deterministic (cc_confirm_reports)'
