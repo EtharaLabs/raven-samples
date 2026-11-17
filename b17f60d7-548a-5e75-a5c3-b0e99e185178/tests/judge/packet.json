@@ -1,0 +1,45 @@
+{
+"denom": 164,
+"inapplicable_when_prereq_failed": true,
+"judgments": {
+"j_adaptation_coherent": "trinity.judgment/j_adaptation_coherent",
+"j_agenda_addendum_prose": "trinity.judgment/j_agenda_addendum_prose",
+"j_agenda_quality": "trinity.judgment/j_agenda_quality",
+"j_handoff": "trinity.judgment/j_handoff",
+"j_notify_consistent": "trinity.judgment/j_notify_consistent",
+"j_o5_quality": "trinity.judgment/j_o5_quality",
+"j_o6_truthful": "trinity.judgment/j_o6_truthful",
+"j_procurement_rationale": "trinity.judgment/j_procurement_rationale",
+"j_reschedule_correct": "trinity.judgment/j_reschedule_correct",
+"j_ride_replan_legible": "trinity.judgment/j_ride_replan_legible",
+"j_role_channel_tone": "trinity.judgment/j_role_channel_tone"
+},
+"live_calls_enabled": true,
+"live_gate": "S5-live is gated for bundle b17f60d7: the judged layer is driven from recorded or stub verdicts and the runner refuses to dial a model.",
+"missing_or_invalid_when_applicable": "harness_failure",
+"model": "openai/gpt-6.1-sol",
+"prerequisites": {
+"j_adaptation_coherent": "a2_rebooked",
+"j_agenda_addendum_prose": "a6_addendum_applied",
+"j_agenda_quality": "o10_complete",
+"j_handoff": "o6_sent",
+"j_notify_consistent": "o5_contains_time",
+"j_o5_quality": "o5_contains_time",
+"j_o6_truthful": "o6_sent",
+"j_procurement_rationale": "x5_product",
+"j_reschedule_correct": "o1_start",
+"j_ride_replan_legible": "a5_ride_rebooked",
+"j_role_channel_tone": "x1_channel_resolved"
+},
+"reducer": "penalty = sum over APPLICABLE judged of weight*(1-score)/DENOM; judged can only lower C, never raise it above the deterministic ceiling.",
+"role": "subtractive_penalty_capacity",
+"schemaVersion": "trinity.judge-packet/v1",
+"score_range": [
+0.0,
+1.0
+],
+"seeds": {
+"trial-1": "b17f60d7-seed-1"
+},
+"temperature": 0
+}

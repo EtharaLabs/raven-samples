@@ -1,0 +1,218 @@
+# REGENERATED from solution/grounding.yaml (approved rubric digest a6cfd302) by solution/recompute.py. DO NOT HAND-EDIT.
+# grounding.yaml sha256 = a6cfd302677520afe2aeb07d87d5d06e35e0d973d244dffe4d95eab68d486ca1
+# FORGE-CANARY-BEGIN
+# FORGE-CANARY-SLOT-1: 9702f5f1d90eab3ff93c565198fd7d9d61fb398ef2ffd3a2ec13d0ddeb2526ca
+# FORGE-CANARY-END
+#
+# The judged layer is subtractive capacity ONLY. Each criterion returns a continuous score
+# in [0,1]; tests/judge/reducer.py folds them as
+#     penalty = sum over APPLICABLE judged of weight*(1-score)/DENOM,   DENOM = 164
+# and tests/score.py subtracts that penalty from the deterministic ceiling, so a judged
+# criterion can only LOWER the reward and can never raise it above det_earned/DENOM.
+#
+# A criterion is APPLICABLE only when its deterministic prerequisite passed. A prerequisite
+# failure makes it INAPPLICABLE and no verdict is owed. For an APPLICABLE criterion a
+# missing, malformed, out-of-range, non-finite or boolean verdict is a HARNESS FAILURE,
+# never a default and never a pass.
+#
+# Live model calls are ON: tests/judge/packet.json sets live_calls_enabled=true and
+# tests/judge/runner.py refuses to dial a model.
+#
+# Defect 7: pinned rewardkit 0.2.4 treats ANY tests/*.toml with a top-level `judge` table
+# or `criterion` array as a rewardkit JudgeTomlConfig (runner.py:266). This bundle's judged
+# layer is continuous + subtractive + prerequisite-gated, which that schema REJECTS; and
+# making it conform would make rewardkit EXECUTE a live LLM judge and merge it into the
+# reward, breaking C_ceiling = det_earned/DENOM. The judged layer is driven by tests/judge/
+# (runner, reducer, packet) and tests/score.py, never by rewardkit, so these tables are
+# namespaced under judged_meta/judged_item to keep rewardkit out while preserving the record.
+[judged_meta]
+role = 'subtractive_penalty_capacity'
+scale = "continuous"
+score_range = [0.0, 1.0]
+denominator = 164
+reducer = "tests/judge/reducer.py"
+runner = "tests/judge/runner.py"
+prompt = "tests/judge/prompt.md"
+packet = "tests/judge/packet.json"
+live_calls_enabled = true
+default_score = 'none'
+missing_or_invalid_when_applicable = 'harness_failure'
+inapplicable_when_prereq_failed = true
+require_finite = true
+require_unique_ids = true
+
+[[judged_item]]
+id = 'j_o5_quality'
+description = 'Notification reads as a coherent heads-up. Judge only: coherent/non-contradictory about the change (tone only)?'
+type = "continuous"
+weight = 1
+negate = false
+prerequisite = 'o5_contains_time'
+[judged_item.annotations]
+mode = "judged"
+role = "subtractive"
+type = 'semantic'
+obligation = 'O5_notify'
+dimension = 'process'
+evidence = 'message content'
+residue = 'clarity irreducible; time presence already deterministic'
+
+[[judged_item]]
+id = 'j_o6_truthful'
+description = 'Confirmation prose not misleading. Judge only: free prose non-misleading (structured backing already deterministic)?'
+type = "continuous"
+weight = 1
+negate = false
+prerequisite = 'o6_sent'
+[judged_item.annotations]
+mode = "judged"
+role = "subtractive"
+type = 'semantic'
+obligation = 'O6_confirm'
+dimension = 'craft'
+evidence = 'AUI text'
+residue = 'tone irreducible; disjoint from o6_nofab'
+
+[[judged_item]]
+id = 'j_reschedule_correct'
+description = 'New event is the SAME meeting, not a lookalike. Judge only: semantic identity with the original client meeting?'
+type = "continuous"
+weight = 1
+negate = false
+prerequisite = 'o1_start'
+[judged_item.annotations]
+mode = "judged"
+role = "subtractive"
+type = 'semantic'
+obligation = 'O1_reschedule'
+dimension = 'craft'
+evidence = 'orig vs new fields'
+residue = 'identity beyond title string'
+
+[[judged_item]]
+id = 'j_handoff'
+description = 'Confirmation legible as a brief summary. Judge only: legible short summary (not garbled/empty)?'
+type = "continuous"
+weight = 1
+negate = false
+prerequisite = 'o6_sent'
+[judged_item.annotations]
+mode = "judged"
+role = "subtractive"
+type = 'semantic'
+obligation = 'O6_confirm'
+dimension = 'process'
+evidence = 'AUI text'
+residue = 'legibility of observable deliverable; not private reasoning'
+
+[[judged_item]]
+id = 'j_notify_consistent'
+description = 'Time told to attendee matches calendar. Judge only: message time matches calendar new start (no contradiction)?'
+type = "continuous"
+weight = 1
+negate = false
+prerequisite = 'o5_contains_time'
+[judged_item.annotations]
+mode = "judged"
+role = "subtractive"
+type = 'semantic'
+obligation = 'O5_notify'
+dimension = 'robustness'
+evidence = 'message time vs calendar'
+residue = 'cross-surface consistency, phrasing-tolerant'
+
+[[judged_item]]
+id = 'j_agenda_quality'
+description = 'Agenda is coherent and usable. Judge only: agenda is coherent/intelligible (not a garbled dump), given items are present?'
+type = "continuous"
+weight = 1
+negate = false
+prerequisite = 'o10_complete'
+[judged_item.annotations]
+mode = "judged"
+role = "subtractive"
+type = 'semantic'
+obligation = 'O10_agenda'
+dimension = 'craft'
+evidence = 'doc contents'
+residue = 'coherence irreducible; item presence already deterministic (o10_complete)'
+
+[[judged_item]]
+id = 'j_adaptation_coherent'
+description = 'The post-A2 rebooking reads as a deliberate replan, not thrash. Judge only: does the calendar trail show one considered move to the new room rather than repeated flip-flopping, given the final location is already deterministically correct?'
+type = "continuous"
+weight = 1
+negate = false
+prerequisite = 'a2_rebooked'
+[judged_item.annotations]
+mode = "judged"
+role = "subtractive"
+type = 'semantic'
+obligation = 'O9_room'
+dimension = 'process'
+evidence = 'the ordered sequence of AGENT Calendar writes after the A2 notice'
+residue = 'replan quality is irreducible; the final location is already deterministic (a2_rebooked) so this grades only the shape of the trail'
+
+[[judged_item]]
+id = 'j_agenda_addendum_prose'
+description = 'The addendum-revised agenda reads as one document, not a patch pile. Judge only: does the revised agenda read as a single coherent agenda rather than an original plus visible correction scars, given the item sets are already deterministically correct?'
+type = "continuous"
+weight = 1
+negate = false
+prerequisite = 'a6_addendum_applied'
+[judged_item.annotations]
+mode = "judged"
+role = "subtractive"
+type = 'semantic'
+obligation = 'O6_agenda'
+dimension = 'craft'
+evidence = 'Files.cat(AGENDA_PATH) final contents'
+residue = 'document integration is irreducible; set membership already deterministic (a6_addendum_applied / x4_closed_excluded)'
+
+[[judged_item]]
+id = 'j_role_channel_tone'
+description = 'The directory-channel message is an appropriate approach to a role-holder. Judge only: does the internal message read as a professional request to a facilities role-holder rather than a bare machine ping, given the recipient id is already deterministically correct?'
+type = "continuous"
+weight = 1
+negate = false
+prerequisite = 'x1_channel_resolved'
+[judged_item.annotations]
+mode = "judged"
+role = "subtractive"
+type = 'semantic'
+obligation = 'O1_notify'
+dimension = 'process'
+evidence = 'Messages.send_message content'
+residue = 'register and appropriateness are irreducible; recipient identity already deterministic (x1_channel_resolved)'
+
+[[judged_item]]
+id = 'j_ride_replan_legible'
+description = 'The cancel-then-rebook sequence reads as deliberate, not flailing. Judge only: does the ride trail show one cancellation and one corrected re-order rather than repeated blind retries against the on-going-ride error, given the final destination is already deterministically correct?'
+type = "continuous"
+weight = 1
+negate = false
+prerequisite = 'a5_ride_rebooked'
+[judged_item.annotations]
+mode = "judged"
+role = "subtractive"
+type = 'semantic'
+obligation = 'O8_ride'
+dimension = 'craft'
+evidence = 'the ordered CabApp call sequence and ride_history'
+residue = 'recovery quality under a native irreversibility is irreducible; the final ride is already deterministic (a5_ride_rebooked / a5_pickup_corrected)'
+
+[[judged_item]]
+id = 'j_procurement_rationale'
+description = 'The substitution is explained to the user rather than made silently. Judge only: does any agent-authored message or the confirmation say that the named pack was unavailable and a substitute was ordered, given the ordered item is already deterministically correct?'
+type = "continuous"
+weight = 1
+negate = false
+prerequisite = 'x5_product'
+[judged_item.annotations]
+mode = "judged"
+role = "subtractive"
+type = 'semantic'
+obligation = 'O7_procurement'
+dimension = 'coverage'
+evidence = 'AUI confirmation and agent sends vs the A8 notice'
+residue = 'whether a silent substitution was surfaced is a reporting judgement; the item id is already deterministic (a8_substituted)'

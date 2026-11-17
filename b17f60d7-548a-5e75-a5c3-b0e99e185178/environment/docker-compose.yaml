@@ -1,0 +1,160 @@
+# raven-ar9 b17f60d7 — environment compose spec (Lane C: container isolation).
+#
+# This file declares the SIDECAR topology for the runtime environment. Harbor's
+# TaskConfig has no [[services]] table: sidecars live here and task.toml only
+# references them. The build context for
+# this file is `environment/` (the agent image's context_dir); `build.context: .`
+# below therefore resolves to environment/ and `Dockerfile` is environment/Dockerfile.
+#
+# THREE TRUST DOMAINS (acceptance 1)
+# ----------------------------------
+#   (a) main    — the AGENT container. Built from the Dockerfile `agent` target,
+#                 which carries NO engine source (no raven_ar9/) and NO world /
+#                 ground-truth data (no universe_0.json). It mounts NO named volume,
+#                 so it has no path to the authoritative event log. It runs
+#                 no-network: its ONLY reachable peer is the oracle, over the
+#                 gatewayless `oracle_net` (internal: true) by DNS name `oracle`.
+#   (b) oracle  — the ARE engine + deterministic clock + MCP surface. Built from the
+#                 Dockerfile `oracle` target. It runs `python -m raven_ar9.server`
+#                 over streamable-http and holds the AUTHORITATIVE event log on the
+#                 ORACLE-ONLY named volume `oracle-authority` at
+#                 /authority/are_event_log.json (RAVEN_EVENTLOG_OUT). No other
+#                 service mounts that volume.
+#   (c) verifier — NOT declared here. task.toml sets environment_mode = "separate",
+#                 so Harbor runs the verifier in a FRESH container that mounts ONLY
+#                 the collected artifacts (the oracle's are_event_log.json), never
+#                 the agent or oracle filesystem.
+#
+# NETWORK (Design B: internal DNS, acceptance 1)
+# ----------------------------------------------
+# `oracle_net` is `internal: true` -> it has NO gateway, so nothing on it can reach
+# the internet. That makes agent<->oracle reachable by DNS (`http://oracle:8000/mcp`)
+# while keeping both off the public network by construction. Because the services
+# attach an explicit network they opt OUT of Harbor's local-docker egress sidecar;
+# the internal network's gatewaylessness is the isolation guarantee instead, which
+# (unlike the loopback-exemption path) does not depend on the host kernel shipping
+# CONFIG_NFT_FIB_INET.
+
+name: raven-ar9-b17f60d7
+
+services:
+  main:
+    # The agent container. Harbor overlays the real agent command and the /logs
+    # bind at runtime; this fragment fixes the agent build target, the internal
+    # network membership, and — critically — mounts NO volume (no authority path).
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: agent
+    user: "10001:10001"
+    networks:
+      - oracle_net
+      - proxy_net
+    # FORGE finding (defect 1): the agent attaching only `oracle_net` (internal: true,
+    # gatewayless) left it with NO route to the model endpoint, so the embedded resolver
+    # 127.0.0.11 SERVFAILed external names and [agent].network_mode=allowlist was a silent
+    # no-op. FIX: give the AGENT an AUTHORED egress path — route its HTTPS/HTTP through the
+    # CONNECT proxy below, which is the ONLY path off the gatewayless nets. The oracle MCP
+    # endpoint stays DIRECT via NO_PROXY so agent<->oracle is never proxied, and the oracle
+    # service itself keeps NO egress (oracle_net remains gatewayless). This preserves the
+    # three-trust-domain topology while unblocking only the agent.
+    environment:
+      HTTPS_PROXY: "http://egress-proxy:3128"
+      HTTP_PROXY: "http://egress-proxy:3128"
+      https_proxy: "http://egress-proxy:3128"
+      http_proxy: "http://egress-proxy:3128"
+      NO_PROXY: "oracle,localhost,127.0.0.1"
+      no_proxy: "oracle,localhost,127.0.0.1"
+    depends_on:
+      oracle:
+        condition: service_healthy
+      egress-proxy:
+        condition: service_started
+    # Placeholder so the service is valid standalone for isolation testing; Harbor
+    # replaces it with the agent harness command.
+    command: ["python", "-c", "import time; time.sleep(2**31)"]
+    # volumes: main must NOT mount oracle-authority; it mounts ONLY the shared
+    # trigger volume (the no-network-safe replacement for the TCP replay trigger).
+    volumes:
+      - oracle-trigger:/trigger
+
+  oracle:
+    build:
+      context: .
+      dockerfile: Dockerfile
+      target: oracle
+    # Serve the Lane B MCP surface over HTTP so the agent reaches it across the
+    # container boundary. The server binds 0.0.0.0:8000 (FASTMCP_HOST/PORT baked in
+    # the oracle image) and publishes streamable-http at /mcp.
+    command: ["python", "-m", "raven_ar9.server", "--transport", "streamable-http"]
+    environment:
+      # Authority-contract paths. INTEGRATION RECONCILIATION: these MUST match the
+      # task.toml [[artifacts]] source fields + RAVEN_VERIFIER_WORKSPACE (/authority)
+      # + score.py's <workspace>/eventlog.json & /appstate.json readers. The env var
+      # here overrides the server.py/collect.py defaults, so it is the single source
+      # of truth for the oracle's write path (was stale are_event_log.json -> dropped,
+      # which would never be collected under the fixed [[artifacts]] source).
+      RAVEN_EVENTLOG_OUT: "/authority/eventlog.json"
+      RAVEN_APPSTATE_OUT: "/authority/appstate.json"
+      RAVEN_UNIVERSE_PATH: "/task/universe_0.json"
+      RAVEN_MCP_TRANSPORT: "streamable-http"
+      FASTMCP_HOST: "0.0.0.0"
+      FASTMCP_PORT: "8000"
+      # Integration may inject RAVEN_EPISODE_SEED here for a non-default seed.
+    volumes:
+      # The ONLY mount of the authoritative-log volume, oracle-only.
+      - oracle-authority:/authority
+      - oracle-trigger:/trigger
+    networks:
+      oracle_net:
+        aliases:
+          - oracle
+    expose:
+      - "8000"
+    # No `ports:` — the server is never published to the host, only onto oracle_net.
+    healthcheck:
+      # Gate the agent's start on the MCP port being accepting connections. The slim
+      # image has no curl, so probe the TCP socket with the stdlib.
+      test:
+        - "CMD"
+        - "python"
+        - "-c"
+        - "import socket,sys; s=socket.socket(); s.settimeout(2); sys.exit(0 if s.connect_ex(('127.0.0.1',8000))==0 else 1)"
+      interval: "2s"
+      timeout: "3s"
+      retries: 30
+      start_period: "5s"
+
+  egress-proxy:
+    # Authored CONNECT/egress proxy: the agent's ONLY route to the model endpoint.
+    # It bridges the internal `proxy_net` (shared with the agent) to the routed
+    # `egress_net` (the sole network with a gateway). The oracle never joins either,
+    # so oracle isolation is unchanged. FilterDefaultDeny + an explicit allowlist keep
+    # this a narrow, authored egress rather than an open gateway.
+    # Built at build time from ./egress-proxy (tinyproxy + allowlist baked in), so the
+    # container installs nothing when it starts.
+    build:
+      context: ./egress-proxy
+      dockerfile: Dockerfile
+    networks:
+      - proxy_net
+      - egress_net
+
+networks:
+  oracle_net:
+    # Gatewayless: joins main<->oracle for MCP, reaches no external host.
+    internal: true
+  proxy_net:
+    # Gatewayless: joins the agent to the egress-proxy only. The oracle is absent.
+    internal: true
+  egress_net:
+    # The ONLY routed network (has a gateway). Attached solely by egress-proxy, so it
+    # is the single authored path off the internal nets; neither agent nor oracle joins it.
+    {}
+
+volumes:
+  oracle-authority:
+    # Oracle-only. Holds /authority/are_event_log.json, the authoritative log. No
+    # agent-writable path maps here; the verifier receives it only via the collected
+    # [[task.artifacts]] entry (service = oracle), never by mounting this volume.
+  oracle-trigger:

@@ -1,0 +1,6 @@
+**
+!raven_ar9
+!raven_ar9/**
+!universe_0.json
+**/__pycache__
+**/*.pyc

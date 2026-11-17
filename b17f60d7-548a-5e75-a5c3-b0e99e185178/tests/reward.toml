@@ -1,0 +1,42 @@
+# REGENERATED from solution/grounding.yaml (approved rubric digest a6cfd302) by solution/recompute.py. DO NOT HAND-EDIT.
+# grounding.yaml sha256 = a6cfd302677520afe2aeb07d87d5d06e35e0d973d244dffe4d95eab68d486ca1
+# FORGE-CANARY-BEGIN
+# FORGE-CANARY-SLOT-1: db8462b7151829d7a5f930652f25bdc86d1d67fabee7b510fdc3a3f41cb8cf72
+# FORGE-CANARY-END
+#
+# tests/test_output.py registers the 44 COMPILED criteria with their
+# grounding weights, so rewardkit's weighted-mean over them is exactly
+# C_ceiling = det_earned / 164. DENOM is constant across the oracle, a no-op and every
+# control, which is what stops a no-op from raising its score by shrinking its denominator.
+#
+# The BOUND reward is computed by tests/score.py, which is the authority:
+#     C = C_ceiling - semantic_penalty          (the judged layer is subtractive only)
+#     R = max(0, C * (1 - 0.20) ** F)           (faults discount C geometrically; F in [0,3])
+# tests/test.sh writes that full result to /logs/verifier/score.json beside rewardkit's reward.json,
+# including F, full_success, and any harness failure.
+
+[[reward]]
+name = "reward"
+aggregation = "weighted-mean"
+
+[scoring.test_output]
+aggregation = "weighted-mean"
+
+# Defect 7: the pinned rewardkit 0.2.4 validates reward.toml as RewardTomlConfig
+# (extra='forbid'; only [[reward]] and [scoring.<py-stem>] carrying aggregation/threshold),
+# and a [scoring.bound] subtable both fails that schema and is read as an unknown
+# programmatic scoring input. The bound-reward algebra is therefore RECORDED AS COMMENTS:
+# tests/score.py is the declared authority that computes C/F/R from these rules, while
+# rewardkit only folds the compiled criteria into the weighted-mean cross-check (reward.json).
+#   bound.scorer = 'tests/score.py'
+#   bound.output = '/logs/verifier/score.json'
+#   bound.denominator = 'compiled_weight_only'
+#   bound.denom = 164
+#   bound.judged_role = 'subtractive_penalty_capacity'
+#   bound.ceiling = 'det_earned_over_denom'
+#   bound.fault_weight = 0.20
+#   bound.fault_conditions = ['F_late', 'F_wrong_entity', 'F_fabrication']
+#   bound.full_success_rule = 'det_earned==DENOM and semantic_penalty==0 and F==0'
+#   bound.full_success_reported_separately_from_reward = true
+#   bound.option_c = 'a late timing-bound obligation (o1_start, o5_sent, o10_written, o10_complete, o10_delivered, x1_role_resolved, x1_channel_resolved, x2_origin, x3_room_derived, x3_hold, x4_open_covered, x4_delivered, x5_qty, x5_product, x6_pickup, x6_block, a2_rebooked, a4_cover_notified, a5_ride_rebooked, a5_pickup_corrected, a6_addendum_applied, a8_substituted, t_before_cutoff, t_confirm_sent) loses its completion credit in C AND increments F_late once (deliberate documented double-count)'
+#   bound.harness_failure_exit_code = 3
