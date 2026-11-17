@@ -1,0 +1,69 @@
+schema_version = "1.4"
+reward_type = "bounded_continuous"
+
+artifacts = [{ source = "/app/actions.json" }]
+
+[task]
+name = "ethara/832c4f92-1f69-562a-9c84-f80e797bc46b"
+version = "1.0.0"
+description = "A dense reconstructed ARE Mobile universe (persona-rooted apps as structured data) for a Product Operations Manager back from two weeks of leave, triaging a flooded inbox, a tangled calendar and many pending threads over a single-turn, ~20-part request. The universe is deliberately dense and noisy so errors compound: 48 contacts (duplicate first names - two Alex, two Sam, two Priya, two Nina, two Victor; shared surnames; a name-swap Jordan Blake / Blake Jordan), 52 inbox and 5 sent emails (same-topic clusters, conflicting and stale-vs-current threads, a cancelled/retracted thread, a duplicate-subject pair), 18 calendar events (duplicate titles, a moved-but-not-updated event, conflicting times), and 16 chats (role claims and standing instructions). The hardness is density plus genuine uncertainty, and the primary failure modes are over-abstention and wrong-target, not forbidden-action bait. Thirteen asks are clear must-do writes that each resolve to exactly one target only through a subtle deeper hop, many of which LOOK unresolvable so a cautious reader wrongly abstains and loses them (RSVP the team lunch; confirm the lease renewal not the look-alike apartment-upgrade spam; confirm the Q2 planning offsite not the cancelled budget offsite; tell the current Helios lead who took it over this week that you will join his sync; reply to the recruiter you were actually pursuing per your own sent mail not the unsolicited one; update the moving colleague's email not the other same-first-name colleague; update one Chen's title not the same-surname Chen; delete the duplicate order confirmation the vendor disavowed not the real same-subject one; post Vega status in the Vega channel not the watercooler or either launch channel; ack the on-call handover; add the dentist cleaning at the confirmed time not either originally-offered slot; add the 1:1 at the moved time not the stale calendar slot; add the Helios sync at the current lead's Thursday time not the stale Wednesday one). Several are wrong-target where the surface-louder candidate is forbidden, so a confident reader resolves wrong and loses that write. Eight parts are genuine traps, each with a first- and second-match forbidden candidate a correct solver never makes: 'the investor who sent the term sheet' (two sent one, and a chat says hold), 'the contract' (two pending from two Priyas), 'the redesign' (two in flight), 'the launch channel' (two same-named chats), the budget offsite (cancelled), 'the Vega standup' (three conflicting events), the two-Sams offsite-venue ask, and the wrong-recruiter decoy. Asks interleave so no positional cue marks difficulty, and some resolutions cascade (mis-resolving the Helios owner propagates to the Helios-sync calendar add). The agent completes the thirteen resolved writes and reports the ambiguous and cancelled asks via send_message_to_user without guessing or forcing a write. Graded by an ARE-style write-action verifier as a weighted mean over per-fact criteria plus a single bounded, work-conditional side-effect gate worth 35% of the deterministic dimension (earned only when the agent completes most of the clear writes and springs no trap), so a consequential wrong write is penalised meaningfully without any single fact being weighted as the sum of the others and without a half-score cliff; three resolution chains compound genuine dependency errors. This is the single-turn Ambiguity subset of Gaia2; it reconstructs the Mobile environment as static data and does not run on the live ARE runtime."
+authors = [{ name = "mansa.gupta", email = "mansa.gupta@ethara.ai" }]
+keywords = ["gaia2", "are", "ambiguity", "mobile", "underspecified-intent", "triage", "over-abstention", "wrong-target", "density", "cross-app-join", "write-action-verifier"]
+
+[metadata]
+capability = "underspecified_intent"
+archetype = "AR7"
+intended_realization = "gaia2_ambiguity_mobile_single_turn"
+reference_benchmark = "ARE / GAIA2"
+mobile_apps = ["persona", "contacts", "chats", "emails", "calendar"]
+maturity = "draft"
+null_floor = 0.0
+discrimination_weight = 1.0
+platforms = ["linux/amd64", "linux/arm64"]
+pass_rates = []
+
+[agent]
+timeout_sec = 900
+network_mode = "no-network"
+user = "1000"
+
+[environment]
+# No docker_image: the agent image builds from environment/Dockerfile, which bakes the universe
+# files. The agent reads JSON and writes actions.json, so it needs no deps and no network.
+network_mode = "no-network"
+build_timeout_sec = 600
+cpus = 1
+memory_mb = 1024
+storage_mb = 2048
+gpus = 0
+
+[verifier]
+timeout_sec = 600
+environment_mode = "separate"
+network_mode = "allowlist"
+
+[verifier.env]
+# The codex agent judge reads its model credential from the host at grade time; both the API key
+# and the codex access token are templated so whichever the host provides resolves.
+OPENAI_API_KEY = "${OPENAI_API_KEY:-}"
+CODEX_ACCESS_TOKEN = "${CODEX_ACCESS_TOKEN:-}"
+
+[verifier.environment]
+# No docker_image: the verifier image builds from tests/Dockerfile (separate mode, tests/ build
+# context) with rewardkit and the codex CLI baked in. The build phase has network; the grade run
+# is allowlisted to the judge's model host only. Built for the [metadata].platforms.
+network_mode = "allowlist"
+allowed_hosts = ["api.openai.com", "chatgpt.com", "auth.openai.com"]
+
+[metadata.upstream_provenance]
+origin = "original"
+provenance_date = "2026-11-04"
+source_kind = "synthetic"
+
+[metadata.upstream_provenance.source]
+generator = "FORGE run forge-manthan-20261028-112219 (raven, EtharaOrion)"
+generation_inputs = ["./brief/2509.17158-are-scaling-up-agent-environments-and-evaluations.md", "./.memory/forge_view.yaml", "./.seed/runs/forge-manthan-20261028-112219/research.md", "./touchstones/ambiguity/"]
+
+[solution.env]
+# Pin HARBOR_WORKSPACE so the oracle's solve.sh writes actions.json to /app where Harbor collects it.
+HARBOR_WORKSPACE = "/app"

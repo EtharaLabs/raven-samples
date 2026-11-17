@@ -1,0 +1,20 @@
+[
+  {"event_id": "EV01", "date": "2026-03-09", "time": "09:00", "duration_min": 30, "organizer": "dana.okafor", "attendees": ["dana.okafor"], "title": "Back from leave - triage"},
+  {"event_id": "EV02", "date": "2026-03-10", "time": "10:00", "duration_min": 30, "organizer": "C44", "attendees": ["C44", "dana.okafor"], "title": "Vega standup"},
+  {"event_id": "EV03", "date": "2026-03-12", "time": "15:00", "duration_min": 30, "organizer": "C01", "attendees": ["C01", "dana.okafor"], "title": "1:1 with Karen"},
+  {"event_id": "EV04", "date": "2026-03-11", "time": "14:00", "duration_min": 60, "organizer": "C31", "attendees": ["C31", "dana.okafor"], "title": "Helios sync"},
+  {"event_id": "EV05", "date": "2026-03-12", "time": "14:00", "duration_min": 60, "organizer": "C32", "attendees": ["C32", "dana.okafor"], "title": "Helios sync"},
+  {"event_id": "EV06", "date": "2026-03-13", "time": "12:00", "duration_min": 60, "organizer": "C21", "attendees": ["C21", "dana.okafor"], "title": "Team lunch"},
+  {"event_id": "EV07", "date": "2026-03-24", "time": "09:00", "duration_min": 480, "organizer": "C34", "attendees": ["C34", "dana.okafor"], "title": "Q2 planning offsite"},
+  {"event_id": "EV08", "date": "2026-03-16", "time": "13:00", "duration_min": 60, "organizer": "C10", "attendees": ["C10", "dana.okafor"], "title": "Headcount review"},
+  {"event_id": "EV09", "date": "2026-03-17", "time": "11:00", "duration_min": 30, "organizer": "C39", "attendees": ["C39", "dana.okafor"], "title": "Budget review call"},
+  {"event_id": "EV10", "date": "2026-03-18", "time": "16:00", "duration_min": 30, "organizer": "dana.okafor", "attendees": ["dana.okafor"], "title": "Hold"},
+  {"event_id": "EV11", "date": "2026-03-10", "time": "16:00", "duration_min": 30, "organizer": "C02", "attendees": ["C02", "dana.okafor"], "title": "Vega standup"},
+  {"event_id": "EV12", "date": "2026-03-19", "time": "10:00", "duration_min": 30, "organizer": "C24", "attendees": ["C24", "dana.okafor"], "title": "Design review"},
+  {"event_id": "EV13", "date": "2026-03-19", "time": "15:00", "duration_min": 30, "organizer": "C05", "attendees": ["C05", "dana.okafor"], "title": "Design review"},
+  {"event_id": "EV14", "date": "2026-03-20", "time": "07:00", "duration_min": 20, "organizer": "dana.okafor", "attendees": ["dana.okafor"], "title": "Leave for airport"},
+  {"event_id": "EV15", "date": "2026-03-11", "time": "09:30", "duration_min": 15, "organizer": "C44", "attendees": ["C44", "C02"], "title": "Vega standup"},
+  {"event_id": "EV16", "date": "2026-03-23", "time": "10:00", "duration_min": 60, "organizer": "C38", "attendees": ["C38", "dana.okafor"], "title": "Meridian renewal prep"},
+  {"event_id": "EV17", "date": "2026-03-13", "time": "16:00", "duration_min": 30, "organizer": "C33", "attendees": ["C33", "dana.okafor"], "title": "Benefits Q&A"},
+  {"event_id": "EV18", "date": "2026-03-26", "time": "13:00", "duration_min": 45, "organizer": "C11", "attendees": ["C11", "dana.okafor"], "title": "Roadmap readout"}
+]

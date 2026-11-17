@@ -1,0 +1,7 @@
+[
+  {"email_id": "S001", "date": "2026-02-20", "sender": "dana.okafor", "recipient": "tomas@brightprint.example", "folder": "sent", "subject": "Conference banners", "body": "Could you quote us for the conference banners for the March event? Sizes attached."},
+  {"email_id": "S002", "date": "2026-02-20", "sender": "dana.okafor", "recipient": "rachel.donovan@peakline.example", "folder": "sent", "subject": "Re: Helia Staff PM", "body": "Thanks - yes, I'm very interested in the Helia Staff PM role. Send the formal offer when ready."},
+  {"email_id": "S003", "date": "2026-02-22", "sender": "dana.okafor", "recipient": "front.desk@brightsmile.example", "folder": "sent", "subject": "Re: cleaning", "body": "The Wednesday slot is better for me, thanks."},
+  {"email_id": "S004", "date": "2026-02-21", "sender": "dana.okafor", "recipient": "clara.nguyen@vireo.example", "folder": "sent", "subject": "Helios", "body": "Thanks for carrying Helios. Let me know if ownership shifts while I'm out."},
+  {"email_id": "S005", "date": "2026-02-19", "sender": "dana.okafor", "recipient": "chris.dawson@vireo.example", "folder": "sent", "subject": "Vega", "body": "Keep posting Vega status in the Vega channel; I'll catch up when I'm back."}
+]
